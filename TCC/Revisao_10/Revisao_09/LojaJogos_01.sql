@@ -131,18 +131,18 @@ go
 
 Insert into tb_Genero (ds_Genero) 
 values	('Outros'),
-		('Ação'),
+		('AÃ§Ã£o'),
 		('Aventura'),
 		('Corrida'),
 		('Em Grupo / Familia'),
 		('Esporte'),
-		('Estratégia'),
+		('EstratÃ©gia'),
 		('Infantil'),
 		('Luta'),
-		('Música'),
+		('MÃºsica'),
 		('Puzzle'),
 		('RPG'),
-		('Simulação'),
+		('SimulaÃ§Ã£o'),
 		('Suspense / Terror'),
 		('Tiro');
 go
@@ -161,18 +161,18 @@ go
 
 Insert into tb_Genero (ds_Genero, Ativo) 
 values	('Outros'),
-		('Ação'),
+		('AÃ§Ã£o'),
 		('Aventura'),
 		('Corrida'),
 		('Em Grupo / Familia'),
 		('Esporte'),
-		('Estratégia'),
+		('EstratÃ©gia'),
 		('Infantil'),
 		('Luta'),
-		('Música'),
+		('MÃºsica'),
 		('Puzzle'),
 		('RPG'),
-		('Simulação'),
+		('SimulaÃ§Ã£o'),
 		('Suspense / Terror'),
 		('Tiro');
 go
@@ -210,7 +210,7 @@ Ativo bit not null default(1)
 go
 
 Insert into tb_Produto (Nome,cd_TipoProduto, cd_FaixaEtaria, cd_Plataforma, cd_Fabricante, cd_fornecedor, cd_Genero, Quantidade, Condicao, Preco) 
-values	('DRAGON BALL FIGHTERZ EDIÇÃO FIGHTERZ','1','3','4','1','1','9','20','novo','174.90'),   
+values	('DRAGON BALL FIGHTERZ EDIÃ‡ÃƒO FIGHTERZ','1','3','4','1','1','9','20','novo','174.90'),   
 		('FAR CRY 5 STEELBOOK','1','6','4','1','1','2','10','novo','249.90'),   
 		('MONSTE ENERGY SUPERCROSS','1','1','4','1','1','4','15','novo','199.90'),   
 		('JUST DANCE 2018 PTBR CPP (NAC-BRA) PS3 UBI','1','1','3','1','2','5','15','novo','199.90'),   
@@ -233,11 +233,10 @@ go
  go
 
 
-
-
-
-
 /*
+
+
+
 Select 
 ---COISAS QUE IREI DEVOLVER---
 	A.Nome,
