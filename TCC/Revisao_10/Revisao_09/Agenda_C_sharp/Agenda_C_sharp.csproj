@@ -93,6 +93,7 @@
     <Compile Include="ClnAgenda.cs" />
     <Compile Include="ClnCliente.cs" />
     <Compile Include="ClnFornecedor.cs" />
+    <Compile Include="ClnFuncionario.cs" />
     <Compile Include="ClnProduto.cs" />
     <Compile Include="ClnUtil.cs" />
     <Compile Include="frmCompleto.cs">

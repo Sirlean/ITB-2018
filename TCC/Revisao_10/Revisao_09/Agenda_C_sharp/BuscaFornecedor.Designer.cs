@@ -46,12 +46,9 @@
             // 
             // dgvBuscaFornecedor
             // 
-            this.dgvBuscaFornecedor.AllowUserToAddRows = false;
-            this.dgvBuscaFornecedor.AllowUserToDeleteRows = false;
             this.dgvBuscaFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscaFornecedor.Location = new System.Drawing.Point(12, 75);
             this.dgvBuscaFornecedor.Name = "dgvBuscaFornecedor";
-            this.dgvBuscaFornecedor.ReadOnly = true;
             this.dgvBuscaFornecedor.Size = new System.Drawing.Size(726, 160);
             this.dgvBuscaFornecedor.TabIndex = 20;
             // 

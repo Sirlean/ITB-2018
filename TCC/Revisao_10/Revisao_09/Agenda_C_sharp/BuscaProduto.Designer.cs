@@ -36,9 +36,9 @@
             this.btnExcluirBuscaProduto = new System.Windows.Forms.Button();
             this.btnSairBuscaProduto = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboTipoPesquisa = new System.Windows.Forms.ComboBox();
             this.txtDescricaoBuscaProduto = new System.Windows.Forms.TextBox();
             this.btnPesquisarBuscaProduto = new System.Windows.Forms.Button();
-            this.cboTipoPesquisa = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscaProduto)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -124,6 +124,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "FILTROS";
             // 
+            // cboTipoPesquisa
+            // 
+            this.cboTipoPesquisa.FormattingEnabled = true;
+            this.cboTipoPesquisa.Items.AddRange(new object[] {
+            "Código",
+            "Tipo",
+            "Nome ",
+            "Faixa Etária",
+            "Fornecedor",
+            "Gênero"});
+            this.cboTipoPesquisa.Location = new System.Drawing.Point(6, 19);
+            this.cboTipoPesquisa.Name = "cboTipoPesquisa";
+            this.cboTipoPesquisa.Size = new System.Drawing.Size(121, 21);
+            this.cboTipoPesquisa.TabIndex = 9;
+            // 
             // txtDescricaoBuscaProduto
             // 
             this.txtDescricaoBuscaProduto.Location = new System.Drawing.Point(164, 22);
@@ -141,21 +156,6 @@
             this.btnPesquisarBuscaProduto.Text = "P&esquisar";
             this.btnPesquisarBuscaProduto.UseVisualStyleBackColor = true;
             this.btnPesquisarBuscaProduto.Click += new System.EventHandler(this.btnPesquisarBuscaProduto_Click);
-            // 
-            // cboTipoPesquisa
-            // 
-            this.cboTipoPesquisa.FormattingEnabled = true;
-            this.cboTipoPesquisa.Items.AddRange(new object[] {
-            "Código",
-            "Tipo",
-            "Nome ",
-            "Faixa Etária",
-            "Fornecedor",
-            "Fabricante"});
-            this.cboTipoPesquisa.Location = new System.Drawing.Point(6, 19);
-            this.cboTipoPesquisa.Name = "cboTipoPesquisa";
-            this.cboTipoPesquisa.Size = new System.Drawing.Size(121, 21);
-            this.cboTipoPesquisa.TabIndex = 9;
             // 
             // BuscaProduto
             // 

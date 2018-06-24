@@ -37,15 +37,42 @@ namespace Agenda_C_sharp
 
         private void CarregarDataGrid()
         {
+            string campo_Sql = "nome";
+
+            if (cboTipoPesquisa.SelectedIndex == 0)
+            {
+                campo_Sql = "codigo";
+            }
+            else if (cboTipoPesquisa.SelectedIndex == 1)
+            {  
+                campo_Sql = "tipo";
+            }
+            else if (cboTipoPesquisa.SelectedIndex == 2)
+            { campo_Sql = "nome";
+            }
+            else if (cboTipoPesquisa.SelectedIndex == 3)
+            {
+                campo_Sql = "faixaEtaria";
+            }
+            else if (cboTipoPesquisa.SelectedIndex == 4)
+            {
+                campo_Sql = "fornecedor";
+            }
+            else if (cboTipoPesquisa.SelectedIndex == 5)
+            {
+                campo_Sql = "genero";
+            }
+
             //Método Listar que passa o parâmetro do texto digitado para o grid
-            dgvBuscaProduto.DataSource = ObjProduto.LocalizarPorNome(txtDescricaoBuscaProduto.Text);
+            dgvBuscaProduto.DataSource = ObjProduto.PesquisarPorTipo(txtDescricaoBuscaProduto.Text, campo_Sql);
             //Cria os cabeçalhos de cada coluna 
-            dgvBuscaProduto.Columns[0].HeaderText = ("TIPO"); //Nome do cabeçalho das colunas 
-            dgvBuscaProduto.Columns[1].HeaderText = ("NOME");
-            dgvBuscaProduto.Columns[2].HeaderText = ("GÊNERO");
-            dgvBuscaProduto.Columns[3].HeaderText = ("FAIXA ETÁRIA");
-            dgvBuscaProduto.Columns[4].HeaderText = ("FORNECEDOR");
-            dgvBuscaProduto.Columns[5].HeaderText = ("FABRICANTE");
+            dgvBuscaProduto.Columns[0].HeaderText = ("CODIGO"); //Nome do cabeçalho das colunas 
+            dgvBuscaProduto.Columns[1].HeaderText = ("TIPO"); //Nome do cabeçalho das colunas 
+            dgvBuscaProduto.Columns[2].HeaderText = ("NOME");
+            dgvBuscaProduto.Columns[3].HeaderText = ("GÊNERO");
+            dgvBuscaProduto.Columns[4].HeaderText = ("FAIXA ETÁRIA");
+            dgvBuscaProduto.Columns[5].HeaderText = ("FORNECEDOR");
+            //dgvBuscaProduto.Columns[6].HeaderText = ("FABRICANTE");
 
             dgvBuscaProduto.AutoResizeColumns();
         }

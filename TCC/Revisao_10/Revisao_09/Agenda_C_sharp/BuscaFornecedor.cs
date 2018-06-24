@@ -34,7 +34,7 @@ namespace Agenda_C_sharp
 
         }
 
-        private void CarregarDataGrid()
+        public void CarregarDataGrid()
         {
             ClnFornecedor objFornecedor = new ClnFornecedor();
 
@@ -61,6 +61,7 @@ namespace Agenda_C_sharp
             if (dados.Rows.Count == 0)
             {
                 MessageBox.Show("A pesquisa não retornou dados","PESQUISA",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
 
             //Método Listar que passa o parâmetro do texto digitado para o grid
@@ -102,8 +103,7 @@ namespace Agenda_C_sharp
             objCadastroFornecedor.txtCod.Enabled = false;
             //Alterar o texto do botão &Gravar
             //Envia para o campo Código: O valor do codigo marcado no Grid abaixo
-            objCadastroFornecedor.btnGravarCadastroFornecedor
-                .Text = "&Alterar";
+            objCadastroFornecedor.btnGravarCadastroFornecedor.Text = "&Alterar";
             //Código atual
             objCadastroFornecedor.txtCod.Text = Convert.ToString(dgvBuscaFornecedor.CurrentRow.Cells[0].Value);
             //objCadastroFornecedor.txtNome.Focus();

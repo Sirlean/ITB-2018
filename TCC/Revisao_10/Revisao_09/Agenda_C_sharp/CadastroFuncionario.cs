@@ -26,5 +26,10 @@ namespace Agenda_C_sharp
         {
 
         }
+
+        private void CadastroFuncionario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

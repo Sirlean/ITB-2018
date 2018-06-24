@@ -14,7 +14,8 @@ namespace Agenda_C_sharp
         public static SqlConnection AbreBanco()
         {
             //     string StringConexao = @"Data source=\sqlexpress catalog=lojajogo;";
-            string StringConexao = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=LojaJogos_01;Data Source=.\SQLEXPRESS";
+            //string StringConexao = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=LojaJogos_01;Data Source=.\SQLEXPRESS";
+            string StringConexao = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=LojaJogos_01;Data Source=.\SQLEXPRESS01";
             try
             {
                 SqlConnection conn = new SqlConnection(StringConexao);
