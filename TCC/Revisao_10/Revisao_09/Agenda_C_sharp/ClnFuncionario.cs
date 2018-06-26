@@ -30,5 +30,105 @@ namespace Agenda_C_sharp
         public string Telefone { get => _telefone; set => _telefone = value; }
         public string Celular { get => _Celular; set => _Celular = value; }
         public string Codigo { get => _codigo; set => _codigo = value; }
+
+        internal SqlDataReader localizarCodigo(string codigo)
+        {
+            cldBancoDados objBancoDados = new cldBancoDados();
+            comando = " select * from Tb_Funcionario ";
+            comando += " where cd_Funcionario = " + codigo;
+
+
+            return objBancoDados.RetornaLinha(comando);
+        }
+        public DataTable LocalizarPorCampo(string strValorCampo, string strNomeCampo)
+        {
+            cldBancoDados objBancoDados = new cldBancoDados();
+
+            comando = "select cd_Funcionario, Nome,Cpf, Rg,Genero, Endereco, Numero, Complemento, Bairro, Cidade, Cep, Estado, UF, Email, telefone, Celular from Tb_Funcionario  where " + strNomeCampo + " like '%" +
+            strValorCampo + "%' and Ativo= 1 order by cd_Funcionario";
+
+            return objBancoDados.RetornaTabela(comando);
+
+        }
+        public void ExcluirLogicamente()
+        {
+            cldBancoDados objBancoDados = new cldBancoDados();
+            comando = (" UPDATE tb_Funcionario ");
+            comando += (" SET ");
+            comando += (" ATIVO = '" + 0 + "' ");
+            comando += (" WHERE ");
+            comando += (" cd_Cliente = '" + Codigo + "' ");
+
+            objBancoDados.ExecutaComando(comando);
+        }
+        public void Gravar()
+        {
+            if (string.IsNullOrEmpty(Codigo))
+            {
+                Inserir();
+            }
+            else
+            {
+                Atualizar();
+            }
+        }
+
+        private void Atualizar()
+        {
+            cldBancoDados objBancoDados = new cldBancoDados();
+            comando = "  " +
+                "update tb_Funcionario set" +
+                "Nome = '" + Nome + "'," +
+                "Cpf = '" + Cpf + "'," +
+                "Rg = '" + Rg + "'," +
+                "Genero = '" + Genero + "'," +
+                "Telefone = '" + Telefone + "'," +
+                "Celular ='" + Celular + "'," +
+                "Email= '" + Email + "'," +
+                "Cep= '" + Cep + "'," +
+                "Endereco= '" + Endereco + "'," +
+                "Complemento= '" + Complemento + "'," +
+                "Bairro= '" + Bairro + "'," +
+                "Numero='" + Numero + "'," +
+                "Cidade='" + Cidade + "'," +
+                "UF='" + UF + "'," +
+                "where  cd_Funcionario= '" + Codigo + "'";
+
+
+            objBancoDados.ExecutaComando(comando);
+        }
+
+        private void Inserir()
+        {
+            cldBancoDados objBancoDados = new cldBancoDados();
+            comando = " Insert into tb_Funcionario ( " +
+                "Nome, cpf, rg, Telefone, Celular, Email, " +
+                "Cep, Endereco, Numero, Complemento, Bairro, Cidade, UF" +
+                ") values ( " +
+                "'" + Nome + "'," +
+                "'" + Cpf + "'," +
+                "'" + Rg + "'," +
+                 "'" + Genero + "'," +
+                "'" + Telefone + "'," +
+                "'" + Celular + "'," +
+                "'" + Email + "'," +
+                "'" + Cep + "'," +
+                "'" + Endereco + "'," +
+                "'" + Numero + "'," +
+                "'" + Complemento + "'," +
+                "'" + Bairro + "'," +
+                "'" + Cidade + "'," +
+                "'" + UF + "')";
+
+            objBancoDados.ExecutaComando(comando);
+        }
+
+        public void Excluir()
+        {
+            cldBancoDados objBancoDados = new cldBancoDados();
+            comando = ("delete from tb_Funcionario ");
+            comando += ("where cd_Funcionario= '" + Codigo + "' ");
+            objBancoDados.ExecutaComando(comando);
+        }
     }
 }

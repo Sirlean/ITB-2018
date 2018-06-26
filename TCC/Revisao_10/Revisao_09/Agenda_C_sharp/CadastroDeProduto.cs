@@ -58,6 +58,7 @@ namespace Agenda_C_sharp
             }
             else
             {
+                //Enviar todos os campos para as properties
                 ClnProduto objClnProduto = new ClnProduto();
 
                 objClnProduto.Tipo = cboTipoCadastroProduto.SelectedValue.ToString();

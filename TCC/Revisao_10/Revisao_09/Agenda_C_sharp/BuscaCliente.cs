@@ -26,15 +26,6 @@ namespace Agenda_C_sharp
             InitializeComponent();
         }
 
-        private void btnPesquisarBuscaCliente_Click(object sender, EventArgs e)
-        {
-
-           // CadastroCliente ObjCadastroCliente = new CadastroCliente();
-            //ObjCadastroCliente.ShowDialog();
-              CarregarDataGrid();
-
-        }
-
         public void CarregarDataGrid()
         {
             ClnCliente ObjCliente = new ClnCliente();
@@ -153,6 +144,13 @@ namespace Agenda_C_sharp
         }
 
         private void btnPesquisarBuscaCliente_Click_1(object sender, EventArgs e)
+        {
+            // CadastroCliente ObjCadastroCliente = new CadastroCliente();
+            //ObjCadastroCliente.ShowDialog();
+            CarregarDataGrid();
+        }
+
+        private void dgvBuscaCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

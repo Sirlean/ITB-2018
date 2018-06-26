@@ -59,6 +59,12 @@
     <Compile Include="BuscaFornecedor.Designer.cs">
       <DependentUpon>BuscaFornecedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuscaFuncinario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscaFuncinario.Designer.cs">
+      <DependentUpon>BuscaFuncinario.cs</DependentUpon>
+    </Compile>
     <Compile Include="BuscaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuscaFornecedor.resx">
       <DependentUpon>BuscaFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscaFuncinario.resx">
+      <DependentUpon>BuscaFuncinario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscaProduto.resx">
       <DependentUpon>BuscaProduto.cs</DependentUpon>

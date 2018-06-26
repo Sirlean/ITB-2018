@@ -48,7 +48,7 @@ namespace Agenda_C_sharp
         {
             cldBancoDados objBancoDados = new cldBancoDados();
 
-            comando = "select cd_cliente, Nome,Cpf, Rg,Genero, Endereco, Numero, Complemento, Bairro, Cidade, Cep, Estado, UF, Email, telefone, Celular from Tb_fornecedor  where " + strNomeCampo + " like '%" +
+            comando = "select cd_cliente, Nome,Cpf, Rg,Genero, Endereco, Numero, Complemento, Bairro, Cidade, Cep, Estado, UF, Email, telefone, Celular from Tb_cliente  where " + strNomeCampo + " like '%" +
             strValorCampo + "%' and Ativo= 1 order by cd_cliente";
 
             return objBancoDados.RetornaTabela(comando);
@@ -114,7 +114,7 @@ namespace Agenda_C_sharp
         private void Inserir()
         {
             cldBancoDados objBancoDados = new cldBancoDados();
-            comando = " Insert into tb_Fornecedor ( " +
+            comando = " Insert into tb_Cliente ( " +
                 "Nome, cpf, rg, Telefone, Celular, Email, " +
                 "Cep, Endereco, Numero, Complemento, Bairro, Cidade, UF" +
                 ") values ( " +

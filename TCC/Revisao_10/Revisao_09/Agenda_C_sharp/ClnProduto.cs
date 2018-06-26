@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient; // Para uso do DataReader (Dados para Leitura)
+
 
 namespace Agenda_C_sharp
 {
@@ -11,7 +13,7 @@ namespace Agenda_C_sharp
     {
 
         private int _cd_Produto;
-        private string _Codigo, _Tipo, _Nome, _Fabricante, _Genero, _Plataforma, _Preco, _fornecedor;
+        private string _Codigo, _Tipo, _Nome, _Fabricante, _Genero, _Plataforma, _Preco, _fornecedor, _Quantidade;
         private string comando;
         //Cria objeto para acesso a Camada de Dados
         cldBancoDados objBancoDados = new cldBancoDados();
@@ -24,6 +26,7 @@ namespace Agenda_C_sharp
         public string Plataforma { get => _Plataforma; set => _Plataforma = value; }
         public string Preco { get => _Preco; set => _Preco = value; }
         public string Fornecedor { get => _fornecedor; set => _fornecedor = value; }
+        public string Quantidade { get => _Quantidade; set => _Quantidade = value; }
 
         public DataTable PesquisarPorTipo(string strDescricao, string tipo)
         {
@@ -81,42 +84,29 @@ namespace Agenda_C_sharp
             return PesquisarPorTipo(strDescricao, "nome");
         }
 
-        ////Comando SQL PARA iNSERIR
-        //public void Gravar()
-        //{
-        //    comando = "INSERT INTO tb_produto";
-        //    comando += ("values(");
-        //    comando += ("'" + NomeCadastroDeProduto + "',");
-        //    comando += ("'" + TipoCadastroDeProduto + "',");
-        //    comando += ("'" + FornecedorCadastroDeProduto + "',");
-        //    comando += ("'" + FabricanteCadastroDeProduto + "',");
-        //    comando += ("'" + GeneroCadastroDeProduto + "',");
-        //    comando += ("'" + PlataformaCadastroDeProduto + "',");
-        //    comando += ("'" + PrecoCadastroDeProduto + "',");
-        //    comando += ("'" + QuantidadeCadastroDeProduto + "',");
-        //    comando += ("'1'");
-        //    comando += (")");
-        //    objBancoDados.ExecutaComando(comando);
-        //}
-        ////Comando SQL PARA ALTERAR
-        //public void Alterar()
-        //{
-        //    comando = "UPDATE tb_produto";
-        //    comando += ("values(");
-        //    comando += ("'" + NomeCadastroDeProduto + "',");
-        //    comando += ("'" + TipoCadastroDeProduto + "',");
-        //    comando += ("'" + FornecedorCadastroDeProduto + "',");
-        //    comando += ("'" + FabricanteCadastroDeProduto + "',");
-        //    comando += ("'" + GeneroCadastroDeProduto + "',");
-        //    comando += ("'" + PlataformaCadastroDeProduto + "',");
-        //    comando += ("'" + PrecoCadastroDeProduto + "',");
-        //    comando += ("'" + QuantidadeCadastroDeProduto + "',");
-        //    comando += ("'1'");
-        //    comando += (")");
-        //    objBancoDados.ExecutaComando(comando);
-        //}
 
+        //Comando SQL PARA iNSERIR
 
+        //Comando SQL PARA ALTERAR
+        public void Alterar()
+        {
+            comando = (" UPDATE tb_produto ");
+
+            comando += ("SET");
+            comando += ("Nome = '" + Nome + "',");
+            comando += ("Tipo = '" + Tipo + "',");
+            comando += ("Fornecedor = '" + Fornecedor + "',");
+            comando += ("Fabricante = '" + Fabricante + "',");
+            comando += ("Genero = '" + Genero + "',");
+            comando += ("Plataforma = '" + Plataforma + "',");
+            comando += ("Preco = '" + Preco + "',");
+            comando += ("Quantidade = '" + Quantidade + "',");
+            comando += ("ativo = '1'");
+            comando += ("where");
+            comando += ("cod = '" +_Codigo +"'");
+            objBancoDados.ExecutaComando(comando);
+
+        }
 
         public void Gravar()
         {
@@ -126,23 +116,28 @@ namespace Agenda_C_sharp
             }
             else
             {
-                Atualizar();
+                Alterar();
             }
         }
 
-        private void Atualizar()
-        {
-            throw new NotImplementedException();
-        }
 
-        internal void Alterar()
-        {
-            throw new NotImplementedException();
-        }
 
         private void Inserir()
         {
-            throw new NotImplementedException();
+            comando = "INSERT INTO tb_produto";
+
+            comando += ("values(");
+            comando += ("'" + Nome + "',");
+            comando += ("'" + Tipo + "',");
+            comando += ("'" + Fornecedor + "',");
+            comando += ("'" + Fabricante + "',");
+            comando += ("'" + Genero + "',");
+            comando += ("'" + Plataforma + "',");
+            comando += ("'" + Preco + "',");
+            comando += ("'" + Quantidade + "',");
+            comando += ("'1'");
+            comando += (")");
+            objBancoDados.ExecutaComando(comando);
         }
 
         internal void ExcluirLogicamente()

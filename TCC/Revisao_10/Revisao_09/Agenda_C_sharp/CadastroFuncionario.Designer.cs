@@ -33,7 +33,7 @@
             this.btnGravarCadastroFuncionario = new System.Windows.Forms.Button();
             this.rbCadastroFuncionario = new System.Windows.Forms.RadioButton();
             this.rbMasculinoCadastroFuncionario = new System.Windows.Forms.RadioButton();
-            this.lblGeneroCadastroCliente = new System.Windows.Forms.Label();
+            this.lblGeneroCadastroFuncionario = new System.Windows.Forms.Label();
             this.txtCelularCadastroFuncionario = new System.Windows.Forms.TextBox();
             this.lblCelularCadastroFuncionario = new System.Windows.Forms.Label();
             this.txtRGCadastroFuncionario = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.txtNomeCadastroFuncionario = new System.Windows.Forms.TextBox();
             this.lblNomeCadastroFuncionario = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtComplementoCadastroFuncionario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDataDmCadastroFuncionario = new System.Windows.Forms.TextBox();
             this.txtDataAdmCadastroFuncionario = new System.Windows.Forms.TextBox();
@@ -80,6 +80,7 @@
             this.btnSairCadastroFuncionario.TabIndex = 21;
             this.btnSairCadastroFuncionario.Text = "Sair";
             this.btnSairCadastroFuncionario.UseVisualStyleBackColor = true;
+            this.btnSairCadastroFuncionario.Click += new System.EventHandler(this.btnSairCadastroFuncionario_Click);
             // 
             // btnGravarCadastroFuncionario
             // 
@@ -90,6 +91,7 @@
             this.btnGravarCadastroFuncionario.TabIndex = 20;
             this.btnGravarCadastroFuncionario.Text = "Gravar";
             this.btnGravarCadastroFuncionario.UseVisualStyleBackColor = true;
+            this.btnGravarCadastroFuncionario.Click += new System.EventHandler(this.btnGravarCadastroFuncionario_Click);
             // 
             // rbCadastroFuncionario
             // 
@@ -113,16 +115,16 @@
             this.rbMasculinoCadastroFuncionario.Text = "Masculino";
             this.rbMasculinoCadastroFuncionario.UseVisualStyleBackColor = true;
             // 
-            // lblGeneroCadastroCliente
+            // lblGeneroCadastroFuncionario
             // 
-            this.lblGeneroCadastroCliente.AutoSize = true;
-            this.lblGeneroCadastroCliente.BackColor = System.Drawing.SystemColors.Control;
-            this.lblGeneroCadastroCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGeneroCadastroCliente.Location = new System.Drawing.Point(581, 47);
-            this.lblGeneroCadastroCliente.Name = "lblGeneroCadastroCliente";
-            this.lblGeneroCadastroCliente.Size = new System.Drawing.Size(63, 16);
-            this.lblGeneroCadastroCliente.TabIndex = 27;
-            this.lblGeneroCadastroCliente.Text = "Genero:";
+            this.lblGeneroCadastroFuncionario.AutoSize = true;
+            this.lblGeneroCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblGeneroCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeneroCadastroFuncionario.Location = new System.Drawing.Point(581, 47);
+            this.lblGeneroCadastroFuncionario.Name = "lblGeneroCadastroFuncionario";
+            this.lblGeneroCadastroFuncionario.Size = new System.Drawing.Size(63, 16);
+            this.lblGeneroCadastroFuncionario.TabIndex = 27;
+            this.lblGeneroCadastroFuncionario.Text = "Genero:";
             // 
             // txtCelularCadastroFuncionario
             // 
@@ -246,6 +248,8 @@
             this.txtMaskCepCadastroFuncionario.Name = "txtMaskCepCadastroFuncionario";
             this.txtMaskCepCadastroFuncionario.Size = new System.Drawing.Size(83, 22);
             this.txtMaskCepCadastroFuncionario.TabIndex = 15;
+            this.txtMaskCepCadastroFuncionario.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtMaskCepCadastroFuncionario_MaskInputRejected);
+            this.txtMaskCepCadastroFuncionario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaskCep_KeyDown);
             // 
             // txtCidadeCadastroFuncionario
             // 
@@ -366,7 +370,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtComplementoCadastroFuncionario);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtDataDmCadastroFuncionario);
             this.groupBox1.Controls.Add(this.txtDataAdmCadastroFuncionario);
@@ -374,7 +378,7 @@
             this.groupBox1.Controls.Add(this.lblDataAdmCadastroFuncionario);
             this.groupBox1.Controls.Add(this.rbCadastroFuncionario);
             this.groupBox1.Controls.Add(this.rbMasculinoCadastroFuncionario);
-            this.groupBox1.Controls.Add(this.lblGeneroCadastroCliente);
+            this.groupBox1.Controls.Add(this.lblGeneroCadastroFuncionario);
             this.groupBox1.Controls.Add(this.txtCelularCadastroFuncionario);
             this.groupBox1.Controls.Add(this.lblCelularCadastroFuncionario);
             this.groupBox1.Controls.Add(this.txtRGCadastroFuncionario);
@@ -407,13 +411,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro Funcionário";
             // 
-            // textBox1
+            // txtComplementoCadastroFuncionario
             // 
-            this.textBox1.Location = new System.Drawing.Point(762, 199);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 35;
+            this.txtComplementoCadastroFuncionario.Location = new System.Drawing.Point(762, 199);
+            this.txtComplementoCadastroFuncionario.Multiline = true;
+            this.txtComplementoCadastroFuncionario.Name = "txtComplementoCadastroFuncionario";
+            this.txtComplementoCadastroFuncionario.Size = new System.Drawing.Size(156, 20);
+            this.txtComplementoCadastroFuncionario.TabIndex = 35;
             // 
             // label1
             // 
@@ -499,7 +503,7 @@
         public System.Windows.Forms.Button btnGravarCadastroFuncionario;
         public System.Windows.Forms.RadioButton rbCadastroFuncionario;
         public System.Windows.Forms.RadioButton rbMasculinoCadastroFuncionario;
-        public System.Windows.Forms.Label lblGeneroCadastroCliente;
+        public System.Windows.Forms.Label lblGeneroCadastroFuncionario;
         public System.Windows.Forms.TextBox txtCelularCadastroFuncionario;
         public System.Windows.Forms.Label lblCelularCadastroFuncionario;
         public System.Windows.Forms.TextBox txtRGCadastroFuncionario;
@@ -531,7 +535,7 @@
         public System.Windows.Forms.TextBox txtDataAdmCadastroFuncionario;
         public System.Windows.Forms.Label lblDataDmCadastroFuncionario;
         public System.Windows.Forms.Label lblDataAdmCadastroFuncionario;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtComplementoCadastroFuncionario;
         public System.Windows.Forms.Label label1;
     }
 }

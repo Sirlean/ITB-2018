@@ -123,7 +123,6 @@ namespace Agenda_C_sharp
         {
 
 
-
             //Cria objeto do formulário frmCompleto
             CadastroProduto ObjCadastroProduto = new CadastroProduto();
 

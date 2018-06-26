@@ -51,6 +51,7 @@
             this.dgvBuscaCliente.Name = "dgvBuscaCliente";
             this.dgvBuscaCliente.Size = new System.Drawing.Size(726, 160);
             this.dgvBuscaCliente.TabIndex = 24;
+            this.dgvBuscaCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBuscaCliente_CellContentClick);
             // 
             // groupBox2
             // 

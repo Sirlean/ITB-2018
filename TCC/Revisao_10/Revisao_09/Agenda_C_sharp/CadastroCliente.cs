@@ -23,6 +23,7 @@ namespace Agenda_C_sharp
             // Ao Carregar o formulário
             cboUFCadastroCliente.DropDownStyle = ComboBoxStyle.DropDownList; // alterar o tipo da combo para somente a lista
             PreencherUF();
+            txtCod.Enabled = false;
             lblUfCadastroCliente.Focus();
             if (txtCod.Text != "") // Se não há código no textbox código então não preenche
             {
@@ -91,20 +92,21 @@ namespace Agenda_C_sharp
                 ObjCliente.Telefone = txtTelefoneCadastroCliente.Text;
                 ObjCliente.UF = cboUFCadastroCliente.SelectedValue.ToString();
 
-                //if (string.IsNullOrEmpty(txtCod.Text))// ira devolver se for nulo ou vazio
-                //{
-                //    //Item novo
-                //    objFornecedor.Inserir();
+                /// if (string.IsNullOrEmpty(txtCod.Text))// ira devolver se for nulo ou vazio
+                /// {
+                //eu adicionei ver com o Amor
+                //Item novo
+                ///ObjCliente.Inserir();
 
-                //}
-                //else
-                //{
+            }
+                 /// else
+            {
                 //    //alterar item
-                //    objFornecedor.Cd_Fornecedor = Convert.ToInt32(txtCod.Text);
-                //    objFornecedor.Atualizar();
+                ///ObjCliente.cd_Cliente = Convert.ToInt32(txtCod.Text);
+                // ObjCliente.Atualizar();
 
                 //}
-                ObjCliente.Gravar();
+                /// ObjCliente.Gravar();
 
                 if (txtCod.Text == "")
                 {
