@@ -101,7 +101,7 @@ namespace Agenda_C_sharp
             ObjCadastroCliente.txtCod.Enabled = false;
             //Alterar o texto do botão &Gravar
             //Envia para o campo Código: O valor do codigo marcado no Grid abaixo
-            //ObjCadastroCliente.btnGravarCadastroCliente
+           //ObjCadastroCliente.btnGravarCadastroCliente
             ObjCadastroCliente.btnGravarCadastroCliente.Text = "&Alterar";
             //Código atual
             ObjCadastroCliente.txtCod.Text = Convert.ToString(dgvBuscaCliente.CurrentRow.Cells[0].Value);

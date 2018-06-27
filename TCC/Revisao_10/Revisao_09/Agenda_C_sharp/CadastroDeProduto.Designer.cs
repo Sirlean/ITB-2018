@@ -36,7 +36,6 @@
             this.cboFabricanteCadastroProduto = new System.Windows.Forms.ComboBox();
             this.cboTipoCadastroProduto = new System.Windows.Forms.ComboBox();
             this.cboGeneroCadastroProduto = new System.Windows.Forms.ComboBox();
-            this.btnGravarCadastroProduto = new System.Windows.Forms.Button();
             this.cboCondicaoCadastroProduto = new System.Windows.Forms.ComboBox();
             this.lblPlataformaCadastroProduto = new System.Windows.Forms.Label();
             this.lblFornecedorCadastroProduto = new System.Windows.Forms.Label();
@@ -52,6 +51,7 @@
             this.lblGeneroCadastroProduto = new System.Windows.Forms.Label();
             this.lblPrecoCadastroProduto = new System.Windows.Forms.Label();
             this.lblFaixaEtariaCadastroProduto = new System.Windows.Forms.Label();
+            this.btnGravarCadastroProduto = new System.Windows.Forms.Button();
             this.btnSairCadastroProduto = new System.Windows.Forms.Button();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.LblCod = new System.Windows.Forms.Label();
@@ -136,16 +136,6 @@
             this.cboGeneroCadastroProduto.Name = "cboGeneroCadastroProduto";
             this.cboGeneroCadastroProduto.Size = new System.Drawing.Size(116, 24);
             this.cboGeneroCadastroProduto.TabIndex = 20;
-            // 
-            // btnGravarCadastroProduto
-            // 
-            this.btnGravarCadastroProduto.Location = new System.Drawing.Point(497, 353);
-            this.btnGravarCadastroProduto.Name = "btnGravarCadastroProduto";
-            this.btnGravarCadastroProduto.Size = new System.Drawing.Size(75, 23);
-            this.btnGravarCadastroProduto.TabIndex = 13;
-            this.btnGravarCadastroProduto.Text = "&Gravar";
-            this.btnGravarCadastroProduto.UseVisualStyleBackColor = true;
-            this.btnGravarCadastroProduto.Click += new System.EventHandler(this.btnGravarCadastroDeProduto_Click);
             // 
             // cboCondicaoCadastroProduto
             // 
@@ -287,6 +277,16 @@
             this.lblFaixaEtariaCadastroProduto.TabIndex = 4;
             this.lblFaixaEtariaCadastroProduto.Text = "Faixa_Etaria:";
             // 
+            // btnGravarCadastroProduto
+            // 
+            this.btnGravarCadastroProduto.Location = new System.Drawing.Point(497, 353);
+            this.btnGravarCadastroProduto.Name = "btnGravarCadastroProduto";
+            this.btnGravarCadastroProduto.Size = new System.Drawing.Size(75, 23);
+            this.btnGravarCadastroProduto.TabIndex = 13;
+            this.btnGravarCadastroProduto.Text = "&Gravar";
+            this.btnGravarCadastroProduto.UseVisualStyleBackColor = true;
+            this.btnGravarCadastroProduto.Click += new System.EventHandler(this.btnGravarCadastroDeProduto_Click);
+            // 
             // btnSairCadastroProduto
             // 
             this.btnSairCadastroProduto.Location = new System.Drawing.Point(634, 353);
@@ -304,6 +304,8 @@
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(83, 20);
             this.txtCod.TabIndex = 16;
+            this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
+            this.txtCod.Enabled = false;
             // 
             // LblCod
             // 

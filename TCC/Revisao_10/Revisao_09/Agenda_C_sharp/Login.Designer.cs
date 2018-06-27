@@ -72,6 +72,7 @@
             this.txtNomeLongin.Name = "txtNomeLongin";
             this.txtNomeLongin.Size = new System.Drawing.Size(195, 20);
             this.txtNomeLongin.TabIndex = 3;
+            this.txtNomeLongin.TextChanged += new System.EventHandler(this.txtNomeLongin_TextChanged);
             // 
             // txtSenhaLogin
             // 

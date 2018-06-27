@@ -59,9 +59,13 @@
             this.txtNomeCadastroCliente = new System.Windows.Forms.TextBox();
             this.lblNomeCadastroCliente = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtCod = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtComplementoCadastroCliente = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCod = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtEstadoCadastroCliente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +127,7 @@
             // 
             // txtCelularCadastroCliente
             // 
-            this.txtCelularCadastroCliente.Location = new System.Drawing.Point(329, 113);
+            this.txtCelularCadastroCliente.Location = new System.Drawing.Point(326, 120);
             this.txtCelularCadastroCliente.Multiline = true;
             this.txtCelularCadastroCliente.Name = "txtCelularCadastroCliente";
             this.txtCelularCadastroCliente.Size = new System.Drawing.Size(149, 20);
@@ -134,7 +138,7 @@
             this.lblCelularCadastroCliente.AutoSize = true;
             this.lblCelularCadastroCliente.BackColor = System.Drawing.SystemColors.Control;
             this.lblCelularCadastroCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCelularCadastroCliente.Location = new System.Drawing.Point(265, 115);
+            this.lblCelularCadastroCliente.Location = new System.Drawing.Point(253, 123);
             this.lblCelularCadastroCliente.Name = "lblCelularCadastroCliente";
             this.lblCelularCadastroCliente.Size = new System.Drawing.Size(67, 16);
             this.lblCelularCadastroCliente.TabIndex = 24;
@@ -201,7 +205,7 @@
             // 
             this.cboUFCadastroCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUFCadastroCliente.FormattingEnabled = true;
-            this.cboUFCadastroCliente.Location = new System.Drawing.Point(210, 238);
+            this.cboUFCadastroCliente.Location = new System.Drawing.Point(457, 236);
             this.cboUFCadastroCliente.Name = "cboUFCadastroCliente";
             this.cboUFCadastroCliente.Size = new System.Drawing.Size(53, 24);
             this.cboUFCadastroCliente.TabIndex = 17;
@@ -251,7 +255,7 @@
             this.txtCidadeCadastroCliente.Location = new System.Drawing.Point(516, 279);
             this.txtCidadeCadastroCliente.Multiline = true;
             this.txtCidadeCadastroCliente.Name = "txtCidadeCadastroCliente";
-            this.txtCidadeCadastroCliente.Size = new System.Drawing.Size(197, 20);
+            this.txtCidadeCadastroCliente.Size = new System.Drawing.Size(215, 20);
             this.txtCidadeCadastroCliente.TabIndex = 13;
             // 
             // LblCidade
@@ -297,7 +301,7 @@
             this.lblUfCadastroCliente.AutoSize = true;
             this.lblUfCadastroCliente.BackColor = System.Drawing.SystemColors.Control;
             this.lblUfCadastroCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUfCadastroCliente.Location = new System.Drawing.Point(152, 244);
+            this.lblUfCadastroCliente.Location = new System.Drawing.Point(390, 239);
             this.lblUfCadastroCliente.Name = "lblUfCadastroCliente";
             this.lblUfCadastroCliente.Size = new System.Drawing.Size(38, 16);
             this.lblUfCadastroCliente.TabIndex = 8;
@@ -327,7 +331,7 @@
             // 
             // txtTelefoneCadastroCliente
             // 
-            this.txtTelefoneCadastroCliente.Location = new System.Drawing.Point(82, 113);
+            this.txtTelefoneCadastroCliente.Location = new System.Drawing.Point(82, 119);
             this.txtTelefoneCadastroCliente.Multiline = true;
             this.txtTelefoneCadastroCliente.Name = "txtTelefoneCadastroCliente";
             this.txtTelefoneCadastroCliente.Size = new System.Drawing.Size(149, 20);
@@ -338,7 +342,7 @@
             this.lblTelefoneCadastroCliente.AutoSize = true;
             this.lblTelefoneCadastroCliente.BackColor = System.Drawing.SystemColors.Control;
             this.lblTelefoneCadastroCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefoneCadastroCliente.Location = new System.Drawing.Point(6, 115);
+            this.lblTelefoneCadastroCliente.Location = new System.Drawing.Point(6, 120);
             this.lblTelefoneCadastroCliente.Name = "lblTelefoneCadastroCliente";
             this.lblTelefoneCadastroCliente.Size = new System.Drawing.Size(80, 16);
             this.lblTelefoneCadastroCliente.TabIndex = 3;
@@ -365,6 +369,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtEstadoCadastroCliente);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtComplementoCadastroCliente);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.rbFeminino);
@@ -402,6 +410,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro Cliente";
             // 
+            // txtComplementoCadastroCliente
+            // 
+            this.txtComplementoCadastroCliente.Location = new System.Drawing.Point(618, 196);
+            this.txtComplementoCadastroCliente.Multiline = true;
+            this.txtComplementoCadastroCliente.Name = "txtComplementoCadastroCliente";
+            this.txtComplementoCadastroCliente.Size = new System.Drawing.Size(113, 20);
+            this.txtComplementoCadastroCliente.TabIndex = 31;
+            this.txtComplementoCadastroCliente.TextChanged += new System.EventHandler(this.txtComplementoCadastroCliente_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(510, 198);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 16);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "*Complemento:";
+            // 
             // txtCod
             // 
             this.txtCod.Location = new System.Drawing.Point(69, 12);
@@ -410,24 +438,44 @@
             this.txtCod.Size = new System.Drawing.Size(72, 20);
             this.txtCod.TabIndex = 18;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(513, 197);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 16);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "*Complemento:";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(518, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Nascimento:";
             // 
-            // txtComplementoCadastroCliente
+            // dateTimePicker1
             // 
-            this.txtComplementoCadastroCliente.Location = new System.Drawing.Point(629, 194);
-            this.txtComplementoCadastroCliente.Multiline = true;
-            this.txtComplementoCadastroCliente.Name = "txtComplementoCadastroCliente";
-            this.txtComplementoCadastroCliente.Size = new System.Drawing.Size(120, 20);
-            this.txtComplementoCadastroCliente.TabIndex = 31;
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(618, 123);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(113, 22);
+            this.dateTimePicker1.TabIndex = 33;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(119, 244);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "*Estado:";
+            // 
+            // txtEstadoCadastroCliente
+            // 
+            this.txtEstadoCadastroCliente.Location = new System.Drawing.Point(210, 241);
+            this.txtEstadoCadastroCliente.Multiline = true;
+            this.txtEstadoCadastroCliente.Name = "txtEstadoCadastroCliente";
+            this.txtEstadoCadastroCliente.Size = new System.Drawing.Size(149, 20);
+            this.txtEstadoCadastroCliente.TabIndex = 35;
             // 
             // CadastroCliente
             // 
@@ -485,5 +533,9 @@
         public System.Windows.Forms.TextBox txtCod;
         public System.Windows.Forms.TextBox txtComplementoCadastroCliente;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtEstadoCadastroCliente;
     }
 }

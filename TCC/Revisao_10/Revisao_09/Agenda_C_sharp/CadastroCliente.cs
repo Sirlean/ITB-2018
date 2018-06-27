@@ -32,17 +32,17 @@ namespace Agenda_C_sharp
                 ObjDrDados = ObjCliente.localizarCodigo(txtCod.Text);
                 if (ObjDrDados.Read())
                 {
-                    txtNomeCadastroCliente.Text = ObjDrDados["RazaoSocial"].ToString();
-                    txtCPFCadastroCliente.Text = ObjDrDados["CNPJ"].ToString();
-                    txtRGCadastroCliente.Text = ObjDrDados["NomeFantasia"].ToString();
+                    txtNomeCadastroCliente.Text = ObjDrDados["Nome"].ToString();
+                    txtCPFCadastroCliente.Text = ObjDrDados["Cpf"].ToString();
+                    txtRGCadastroCliente.Text = ObjDrDados["Rg"].ToString();
                     txtTelefoneCadastroCliente.Text = ObjDrDados["Telefone"].ToString();
                     txtCelularCadastroCliente.Text = ObjDrDados["Celular"].ToString();
                     txtEmailCadastroCliente.Text = ObjDrDados["email"].ToString();
                     txtMaskCepCadastroCliente.Text = ObjDrDados["cep"].ToString();
                     txtEnderecoCadastroCliente.Text = ObjDrDados["endereco"].ToString();
                     cboUFCadastroCliente.SelectedValue = ObjDrDados["UF"].ToString();
-                    txtNumeroCadastroCliente.Text = ObjDrDados["EndNumero"].ToString();
-                    txtComplementoCadastroCliente.Text = ObjDrDados["EndComplemento"].ToString();
+                    txtNumeroCadastroCliente.Text = ObjDrDados["dNumero"].ToString();
+                    txtComplementoCadastroCliente.Text = ObjDrDados["dComplemento"].ToString();
                     txtBairroCadastroCliente.Text = ObjDrDados["bairro"].ToString();
                     txtCidadeCadastroCliente.Text = ObjDrDados["cidade"].ToString();
                 }
@@ -77,6 +77,7 @@ namespace Agenda_C_sharp
 
 
                 ClnCliente ObjCliente = new ClnCliente();
+                ObjCliente.Codigo = txtCod.Text;
                 ObjCliente.Bairro = txtBairroCadastroCliente.Text;
                 ObjCliente.Celular = txtCelularCadastroCliente.Text;
                 ObjCliente.Cep = txtMaskCepCadastroCliente.Text;
@@ -88,19 +89,22 @@ namespace Agenda_C_sharp
                 ObjCliente.Numero = txtNumeroCadastroCliente.Text;
                 ObjCliente.Nome = txtNomeCadastroCliente.Text;
                 ObjCliente.Rg = txtRGCadastroCliente.Text;
-                ObjCliente.Genero = lblGeneroCadastroCliente.Text;
+               
                 ObjCliente.Telefone = txtTelefoneCadastroCliente.Text;
                 ObjCliente.UF = cboUFCadastroCliente.SelectedValue.ToString();
+                if (rbMasculino.Checked==true)
+                {
+                    ObjCliente.Genero = "M";
+                }
+               else if (rbFeminino.Checked == true)
+                {
+                    ObjCliente.Genero = "F";
+                }
 
-                /// if (string.IsNullOrEmpty(txtCod.Text))// ira devolver se for nulo ou vazio
-                /// {
-                //eu adicionei ver com o Amor
-                //Item novo
-                ///ObjCliente.Inserir();
+                ObjCliente.Gravar();
 
-            }
-                 /// else
-            {
+                /// else
+
                 //    //alterar item
                 ///ObjCliente.cd_Cliente = Convert.ToInt32(txtCod.Text);
                 // ObjCliente.Atualizar();
@@ -163,6 +167,11 @@ namespace Agenda_C_sharp
                     txtMaskCepCadastroCliente.SelectionStart = 0;
                 }
             }
+        }
+
+        private void txtComplementoCadastroCliente_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

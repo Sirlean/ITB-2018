@@ -80,21 +80,22 @@ namespace Agenda_C_sharp
         private void btnNovoBuscaProduto_Click(object sender, EventArgs e)
         {
             CadastroProduto objCadastroProduto = new CadastroProduto();
-            //objCadastroDeProduto.ShowDialog();
+            objCadastroProduto.Text = ">>>Novo cadastro<<<";
+            objCadastroProduto.ShowDialog();
+            CarregarDataGrid();
 
-            
-            
+
             ////Cria objeto do outro frmulário
             //BuscaProduto  ObjCadastroDeProduto = new BuscaProduto();
 
             ////Alterar as propriedades do outro form:
-            objCadastroProduto.Text = ">>>Novo cadastro<<<";
-            //ObjCadastroDeProduto.txtCod.Enabled = false;
+
+            //objCadastroProduto.txtCod.Enabled = false;
 
             ////Apresenta o formulário
             objCadastroProduto.ShowDialog();
             ////No fechamento do frmCompleto:preencher a grid
-            CarregarDataGrid();
+            
         }
 
         private void btnConsultarBuscaProduto_Click(object sender, EventArgs e)
@@ -129,17 +130,17 @@ namespace Agenda_C_sharp
             //Alterar o nome na barra de título do frmCompleto:
             ObjCadastroProduto.Text = ">>>Alterar<<<";
             //Desativa o texto do código
-            //ObjCadastroDeProduto.txtCod.Enabled = false;
+            ObjCadastroProduto.txtCod.Enabled = false;
             //Alterar o texto do botão &Gravar
             //Envia para o campo Código: O valor do codigo marcado no Grid abaixo
             ObjCadastroProduto.btnGravarCadastroProduto.Text = "&Alterar";
             //Código atual
-            ObjCadastroProduto.btnGravarCadastroProduto.Text = Convert.ToString(dgvBuscaProduto.CurrentRow.Cells[0].Value);
-            ObjCadastroProduto.txtNomeCadastroProduto.Focus();
+            ObjCadastroProduto.txtCod.Text = Convert.ToString(dgvBuscaProduto.CurrentRow.Cells[0].Value);
+            //ObjCadastroProduto.txtNomeCadastroProduto.Focus();
             ObjCadastroProduto.ShowDialog();
             CarregarDataGrid();
         }
-
+        
         private void btnExcluirBuscaProduto_Click(object sender, EventArgs e)
         {
             ClnProduto objFornecedor = new ClnProduto();

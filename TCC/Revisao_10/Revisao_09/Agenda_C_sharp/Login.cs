@@ -32,5 +32,10 @@ namespace Agenda_C_sharp
         {
 
         }
+
+        private void txtNomeLongin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

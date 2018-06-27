@@ -44,6 +44,15 @@ namespace Agenda_C_sharp
             cboTipoCadastroProduto.DisplayMember = "ds_TipoProduto";
             cboTipoCadastroProduto.DataSource = clnUtil.PreencherTipo();
 
+            if (!string.IsNullOrEmpty(txtCod.Text))
+            {
+                //Enviar todos os campos para as properties
+                ClnProduto objClnProduto = new ClnProduto();
+
+                objClnProduto.PesquisarPorTipo(txtCod.Text, "codigo");
+
+            }
+
         }
         private void btnGravarCadastroDeProduto_Click(object sender, EventArgs e)
         {
@@ -61,28 +70,28 @@ namespace Agenda_C_sharp
                 //Enviar todos os campos para as properties
                 ClnProduto objClnProduto = new ClnProduto();
 
-                objClnProduto.Tipo = cboTipoCadastroProduto.SelectedValue.ToString();
+                objClnProduto.Cd_TipoProduto = cboTipoCadastroProduto.SelectedValue.ToString();
                 objClnProduto.Nome = txtNomeCadastroProduto.Text;
-                objClnProduto.Genero = cboGeneroCadastroProduto.SelectedValue.ToString(); 
-                objClnProduto.Fabricante = cboFabricanteCadastroProduto.SelectedValue.ToString();
-                objClnProduto.Plataforma = cboPlataformaCadastroProduto.SelectedValue.ToString();
-                objClnProduto.Preco = txtPrecoCadastroProduto.Text;
-                objClnProduto.Fornecedor = cboFornecedorCadastroProduto.SelectedValue.ToString();
-                if (txtCod.Text == "")
+                objClnProduto.Cd_Genero = cboGeneroCadastroProduto.SelectedValue.ToString(); 
+                objClnProduto.Cd_Fabricante = cboFabricanteCadastroProduto.SelectedValue.ToString();
+                objClnProduto.Cd_Plataforma = cboPlataformaCadastroProduto.SelectedValue.ToString();
+                objClnProduto.Preco = txtPrecoCadastroProduto.Text.Replace(",", ".");
+                objClnProduto.Codigo = txtCod.Text;
+                objClnProduto.Cd_Fornecedor = cboFornecedorCadastroProduto.SelectedValue.ToString();
+                objClnProduto.Quantidade = txtQuantidadeCadastroProduto.Text;
+                objClnProduto.Cd_FaixaEtaria = cboFaixaEtariaCadastroProduto.SelectedValue.ToString();
+                objClnProduto.Condicao = cboCondicaoCadastroProduto.Text;
+
+                objClnProduto.Gravar();
+                if (string.IsNullOrEmpty(txtCod.Text))
                 {
-                    objClnProduto.Gravar();
                     MessageBox.Show("Registro Inserido com sucesso", "Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (txtCod.Text != "")
+                else
                 {
-                    objClnProduto.Codigo = txtCod.Text;
-                    objClnProduto.Alterar();
                     MessageBox.Show("Registro Número "  +  txtCod.Text + " Alterado com sucesso", "Alteração", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            
-
-
-
+                    this.Close();
+                }            
             }
 
         }
@@ -90,6 +99,11 @@ namespace Agenda_C_sharp
         private void btnSairCadastroProduto_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtCod_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

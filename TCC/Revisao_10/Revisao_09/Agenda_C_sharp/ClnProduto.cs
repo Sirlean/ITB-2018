@@ -13,7 +13,9 @@ namespace Agenda_C_sharp
     {
 
         private int _cd_Produto;
-        private string _Codigo, _Tipo, _Nome, _Fabricante, _Genero, _Plataforma, _Preco, _fornecedor, _Quantidade;
+        private string _Codigo, _Tipo, _Nome, _Fabricante, _Genero, _Plataforma, _Preco, _fornecedor, _Quantidade,
+            _cd_TipoProduto, _Cd_Fornecedor, _Cd_Fabricante, _Cd_Genero, _Cd_Plataforma, _Cd_FaixaEtaria, _Condicao;
+         
         private string comando;
         //Cria objeto para acesso a Camada de Dados
         cldBancoDados objBancoDados = new cldBancoDados();
@@ -27,6 +29,13 @@ namespace Agenda_C_sharp
         public string Preco { get => _Preco; set => _Preco = value; }
         public string Fornecedor { get => _fornecedor; set => _fornecedor = value; }
         public string Quantidade { get => _Quantidade; set => _Quantidade = value; }
+        public string Cd_TipoProduto { get => _cd_TipoProduto; set => _cd_TipoProduto = value; }
+        public string Cd_Fornecedor { get => _Cd_Fornecedor; set => _Cd_Fornecedor = value; }
+        public string Cd_Fabricante { get => _Cd_Fabricante; set => _Cd_Fabricante = value; }
+        public string Cd_Genero { get => _Cd_Genero; set => _Cd_Genero = value; }
+        public string Cd_Plataforma { get => _Cd_Plataforma; set => _Cd_Plataforma = value; }
+        public string Cd_FaixaEtaria { get => _Cd_FaixaEtaria; set => _Cd_FaixaEtaria = value; }
+        public string Condicao { get => _Condicao; set => _Condicao = value; }
 
         public DataTable PesquisarPorTipo(string strDescricao, string tipo)
         {
@@ -94,16 +103,18 @@ namespace Agenda_C_sharp
 
             comando += ("SET");
             comando += ("Nome = '" + Nome + "',");
-            comando += ("Tipo = '" + Tipo + "',");
-            comando += ("Fornecedor = '" + Fornecedor + "',");
-            comando += ("Fabricante = '" + Fabricante + "',");
-            comando += ("Genero = '" + Genero + "',");
-            comando += ("Plataforma = '" + Plataforma + "',");
+            comando += ("Tipo = '" + Cd_TipoProduto + "',");
+            comando += ("FaixaEtaria = '" + Cd_FaixaEtaria + "',");
+            comando += ("Fornecedor = '" + Cd_Fornecedor + "',");
+            comando += ("Fabricante = '" + Cd_Fabricante + "',");
+            comando += ("Genero = '" + Cd_Genero + "',");
+            comando += ("Plataforma = '" + Cd_Plataforma + "',");
             comando += ("Preco = '" + Preco + "',");
             comando += ("Quantidade = '" + Quantidade + "',");
+            comando += ("Condicao = '" + Condicao + "',");
             comando += ("ativo = '1'");
             comando += ("where");
-            comando += ("cod = '" +_Codigo +"'");
+            comando += ("cod = '" + _Codigo + "'");
             objBancoDados.ExecutaComando(comando);
 
         }
@@ -124,19 +135,20 @@ namespace Agenda_C_sharp
 
         private void Inserir()
         {
-            comando = "INSERT INTO tb_produto";
+            comando = "INSERT INTO tb_produto(" +
+            "Nome, Cd_TipoProduto, Cd_FaixaEtaria, Cd_Fornecedor, Cd_Fabricante, Cd_Genero, Cd_Plataforma, Preco, Quantidade,Condicao" +
+            ")values(" +
 
-            comando += ("values(");
-            comando += ("'" + Nome + "',");
-            comando += ("'" + Tipo + "',");
-            comando += ("'" + Fornecedor + "',");
-            comando += ("'" + Fabricante + "',");
-            comando += ("'" + Genero + "',");
-            comando += ("'" + Plataforma + "',");
-            comando += ("'" + Preco + "',");
-            comando += ("'" + Quantidade + "',");
-            comando += ("'1'");
-            comando += (")");
+          "'" + Nome + "'," +
+          "'" + Cd_TipoProduto + "'," +
+          "'" + Cd_FaixaEtaria + "'," + 
+          "'" + Cd_Fornecedor + "'," +
+          "'" + Cd_Fabricante + "'," +
+          "'" + Cd_Genero + "'," +
+          "'" + Cd_Plataforma + "'," +
+          "'" + Preco + "'," +
+          "'" + Quantidade + "',"+
+          "'" + Condicao + "')";
             objBancoDados.ExecutaComando(comando);
         }
 

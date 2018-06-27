@@ -11,7 +11,7 @@ namespace Agenda_C_sharp
     class ClnCliente
     {
         private int _cd_Cliente;
-        private string _Nome, _Cpf, _Rg, _Genero, _Endereco, _Numero,_complemento,_Bairro, _Cidade, _Cep, _Estado, _UF, _Email, _telefone, _Celular, _codigo;
+        private string _Nome, _Nascimento, _Cpf, _Rg, _Genero, _Endereco, _Numero,_complemento,_Bairro, _Cidade, _Cep, _Estado, _UF, _Email, _telefone, _Celular, _codigo;
         private string comando;
 
         public string Nome { get => _Nome; set => _Nome = value; }
@@ -30,7 +30,7 @@ namespace Agenda_C_sharp
         public string Codigo { get => _codigo; set => _codigo = value; }
         public string Complemento { get => _complemento; set => _complemento = value; }
         public string Bairro { get => _Bairro; set => _Bairro = value; }
-
+        public string Nascimento { get => _Nascimento; set => _Nascimento = value; }
 
         internal SqlDataReader localizarCodigo(string codigo)
         {
@@ -48,7 +48,7 @@ namespace Agenda_C_sharp
         {
             cldBancoDados objBancoDados = new cldBancoDados();
 
-            comando = "select cd_cliente, Nome,Cpf, Rg,Genero, Endereco, Numero, Complemento, Bairro, Cidade, Cep, Estado, UF, Email, telefone, Celular from Tb_cliente  where " + strNomeCampo + " like '%" +
+            comando = "select cd_cliente, Nome,Cpf, Rg,Genero, Endereco, Bairro, Numero, Complemento, Cidade, Cep, Estado, UF, Email, telefone, Celular from Tb_cliente  where " + strNomeCampo + " like '%" +
             strValorCampo + "%' and Ativo= 1 order by cd_cliente";
 
             return objBancoDados.RetornaTabela(comando);
@@ -90,22 +90,24 @@ namespace Agenda_C_sharp
 
             cldBancoDados objBancoDados = new cldBancoDados();
             comando = "  " +
-                "update tb_Cliente set" +
-                "Nome = '" + Nome + "'," +
-                "Cpf = '" + Cpf + "'," +
-                "Rg = '" + Rg+ "'," +
-                "Genero = '" + Genero+ "'," +
-                "Telefone = '" + Telefone + "'," +
-                "Celular ='" + Celular + "'," +
-                "Email= '" + Email + "'," +
-                "Cep= '" + Cep + "'," +
-                "Endereco= '" + Endereco + "'," +
-                "Complemento= '" + Complemento+ "'," +
-                "Bairro= '" + Bairro+ "'," +
-                "Numero='" + Numero + "'," +
-                "Cidade='" + Cidade + "'," +
-                "UF='" + UF + "'," +
-                "where  cd_cliente= '" + Codigo + "'";
+                " update tb_Cliente set " +
+                " Nome = '" + Nome + "'," +
+                "DtNasc = '" + Nascimento + "'," +
+                " Cpf = '" + Cpf + "'," +
+                " Rg = '" + Rg+ "'," +
+                " Genero = '" + Genero+ "'," +
+                " Telefone = '" + Telefone + "'," +
+                " Celular ='" + Celular + "'," +
+                " Email = '" + Email + "'," +
+                " Cep = '" + Cep + "'," +
+                " Endereco = '" + Endereco + "'," +
+                " Complemento = '" + Complemento+ "'," +
+                " Bairro = '" + Bairro+ "'," +
+                " Numero ='" + Numero + "'," +
+                " Cidade ='" + Cidade + "'," +
+                " Estado ='" + Estado + "'," +
+                " UF='" + UF + "'," +
+                " where  cd_cliente= '" + Codigo + "'";
 
 
             objBancoDados.ExecutaComando(comando);
@@ -115,10 +117,11 @@ namespace Agenda_C_sharp
         {
             cldBancoDados objBancoDados = new cldBancoDados();
             comando = " Insert into tb_Cliente ( " +
-                "Nome, cpf, rg, Telefone, Celular, Email, " +
-                "Cep, Endereco, Numero, Complemento, Bairro, Cidade, UF" +
+                "Nome, DtNasc, cpf, rg, Genero, Telefone, Celular, Email, " +
+                "Cep, Endereco, Numero, Complemento, Bairro, Cidade, Estado, UF" +
                 ") values ( " +
                 "'" + Nome + "'," +
+                "'" + Nascimento + "'," +
                 "'" + Cpf + "'," +
                 "'" + Rg + "'," +
                  "'" + Genero + "'," +
@@ -131,6 +134,7 @@ namespace Agenda_C_sharp
                 "'" + Complemento + "'," +
                 "'" + Bairro + "'," +
                 "'" + Cidade + "'," +
+                "'" + Estado + "'," +
                 "'" + UF + "')";
 
             objBancoDados.ExecutaComando(comando);
