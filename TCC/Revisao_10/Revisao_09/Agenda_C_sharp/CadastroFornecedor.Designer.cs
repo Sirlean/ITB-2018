@@ -45,6 +45,7 @@
             this.btnGravarCadastroFornecedor = new System.Windows.Forms.Button();
             this.LblCod = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMaskCepCadastroFornecedor = new System.Windows.Forms.MaskedTextBox();
             this.txtComplementoCadastroFornecedor = new System.Windows.Forms.TextBox();
             this.lblComplementoCadastroFornecedor = new System.Windows.Forms.Label();
             this.txtCidadeCadastroFornecedor = new System.Windows.Forms.TextBox();
@@ -59,7 +60,6 @@
             this.lblTelefoneCadastroFornecedor = new System.Windows.Forms.Label();
             this.txtRazaoCadastroFornecedor = new System.Windows.Forms.TextBox();
             this.lblNomeCadastroFornecedor = new System.Windows.Forms.Label();
-            this.txtMaskCepCadastroFornecedor = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -211,6 +211,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtMaskCepCadastroFornecedor);
             this.groupBox1.Controls.Add(this.txtComplementoCadastroFornecedor);
             this.groupBox1.Controls.Add(this.lblComplementoCadastroFornecedor);
@@ -244,6 +245,15 @@
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro Fornecedor";
+            // 
+            // txtMaskCepCadastroFornecedor
+            // 
+            this.txtMaskCepCadastroFornecedor.Location = new System.Drawing.Point(62, 192);
+            this.txtMaskCepCadastroFornecedor.Mask = "00000-999";
+            this.txtMaskCepCadastroFornecedor.Name = "txtMaskCepCadastroFornecedor";
+            this.txtMaskCepCadastroFornecedor.Size = new System.Drawing.Size(94, 22);
+            this.txtMaskCepCadastroFornecedor.TabIndex = 30;
+            this.txtMaskCepCadastroFornecedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaskCep_keyDown);
             // 
             // txtComplementoCadastroFornecedor
             // 
@@ -381,20 +391,13 @@
             this.lblNomeCadastroFornecedor.TabIndex = 1;
             this.lblNomeCadastroFornecedor.Text = "*Razão Social:";
             // 
-            // txtMaskCepCadastroFornecedor
-            // 
-            this.txtMaskCepCadastroFornecedor.Location = new System.Drawing.Point(62, 192);
-            this.txtMaskCepCadastroFornecedor.Mask = "00000-999";
-            this.txtMaskCepCadastroFornecedor.Name = "txtMaskCepCadastroFornecedor";
-            this.txtMaskCepCadastroFornecedor.Size = new System.Drawing.Size(94, 22);
-            this.txtMaskCepCadastroFornecedor.TabIndex = 30;
-            this.txtMaskCepCadastroFornecedor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMaskCep_keyDown);
-            // 
             // CadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 487);
+            this.BackgroundImage = global::Agenda_C_sharp.Properties.Resources.gods___myth_by_genzoman;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1004, 501);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.btnSairCadastroFornecedor);
             this.Controls.Add(this.btnGravarCadastroFornecedor);

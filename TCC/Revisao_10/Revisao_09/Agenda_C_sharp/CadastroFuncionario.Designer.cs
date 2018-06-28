@@ -66,12 +66,17 @@
             this.txtDataAdmCadastroFuncionario = new System.Windows.Forms.TextBox();
             this.lblDataDmCadastroFuncionario = new System.Windows.Forms.Label();
             this.lblDataAdmCadastroFuncionario = new System.Windows.Forms.Label();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.lblSenha = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSairCadastroFuncionario
             // 
+            this.btnSairCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSairCadastroFuncionario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSairCadastroFuncionario.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btnSairCadastroFuncionario.Location = new System.Drawing.Point(700, 464);
@@ -79,46 +84,49 @@
             this.btnSairCadastroFuncionario.Size = new System.Drawing.Size(75, 23);
             this.btnSairCadastroFuncionario.TabIndex = 21;
             this.btnSairCadastroFuncionario.Text = "Sair";
-            this.btnSairCadastroFuncionario.UseVisualStyleBackColor = true;
+            this.btnSairCadastroFuncionario.UseVisualStyleBackColor = false;
             this.btnSairCadastroFuncionario.Click += new System.EventHandler(this.btnSairCadastroFuncionario_Click);
             // 
             // btnGravarCadastroFuncionario
             // 
+            this.btnGravarCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGravarCadastroFuncionario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGravarCadastroFuncionario.Location = new System.Drawing.Point(593, 464);
             this.btnGravarCadastroFuncionario.Name = "btnGravarCadastroFuncionario";
             this.btnGravarCadastroFuncionario.Size = new System.Drawing.Size(75, 23);
             this.btnGravarCadastroFuncionario.TabIndex = 20;
             this.btnGravarCadastroFuncionario.Text = "Gravar";
-            this.btnGravarCadastroFuncionario.UseVisualStyleBackColor = true;
+            this.btnGravarCadastroFuncionario.UseVisualStyleBackColor = false;
             this.btnGravarCadastroFuncionario.Click += new System.EventHandler(this.btnGravarCadastroFuncionario_Click);
             // 
             // rbCadastroFuncionario
             // 
             this.rbCadastroFuncionario.AutoSize = true;
+            this.rbCadastroFuncionario.BackColor = System.Drawing.Color.White;
             this.rbCadastroFuncionario.Location = new System.Drawing.Point(629, 77);
             this.rbCadastroFuncionario.Name = "rbCadastroFuncionario";
             this.rbCadastroFuncionario.Size = new System.Drawing.Size(89, 20);
             this.rbCadastroFuncionario.TabIndex = 29;
             this.rbCadastroFuncionario.TabStop = true;
             this.rbCadastroFuncionario.Text = "Feminino";
-            this.rbCadastroFuncionario.UseVisualStyleBackColor = true;
+            this.rbCadastroFuncionario.UseVisualStyleBackColor = false;
             // 
             // rbMasculinoCadastroFuncionario
             // 
             this.rbMasculinoCadastroFuncionario.AutoSize = true;
+            this.rbMasculinoCadastroFuncionario.BackColor = System.Drawing.Color.White;
             this.rbMasculinoCadastroFuncionario.Location = new System.Drawing.Point(516, 75);
             this.rbMasculinoCadastroFuncionario.Name = "rbMasculinoCadastroFuncionario";
             this.rbMasculinoCadastroFuncionario.Size = new System.Drawing.Size(96, 20);
             this.rbMasculinoCadastroFuncionario.TabIndex = 28;
             this.rbMasculinoCadastroFuncionario.TabStop = true;
             this.rbMasculinoCadastroFuncionario.Text = "Masculino";
-            this.rbMasculinoCadastroFuncionario.UseVisualStyleBackColor = true;
+            this.rbMasculinoCadastroFuncionario.UseVisualStyleBackColor = false;
             // 
             // lblGeneroCadastroFuncionario
             // 
             this.lblGeneroCadastroFuncionario.AutoSize = true;
-            this.lblGeneroCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblGeneroCadastroFuncionario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblGeneroCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGeneroCadastroFuncionario.Location = new System.Drawing.Point(581, 47);
             this.lblGeneroCadastroFuncionario.Name = "lblGeneroCadastroFuncionario";
@@ -137,7 +145,7 @@
             // lblCelularCadastroFuncionario
             // 
             this.lblCelularCadastroFuncionario.AutoSize = true;
-            this.lblCelularCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCelularCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblCelularCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCelularCadastroFuncionario.Location = new System.Drawing.Point(265, 115);
             this.lblCelularCadastroFuncionario.Name = "lblCelularCadastroFuncionario";
@@ -156,7 +164,7 @@
             // lblRGCadastroFuncionario
             // 
             this.lblRGCadastroFuncionario.AutoSize = true;
-            this.lblRGCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblRGCadastroFuncionario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblRGCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRGCadastroFuncionario.Location = new System.Drawing.Point(292, 32);
             this.lblRGCadastroFuncionario.Name = "lblRGCadastroFuncionario";
@@ -194,7 +202,7 @@
             // lblCPFCadastroFuncionario
             // 
             this.lblCPFCadastroFuncionario.AutoSize = true;
-            this.lblCPFCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCPFCadastroFuncionario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblCPFCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPFCadastroFuncionario.Location = new System.Drawing.Point(14, 31);
             this.lblCPFCadastroFuncionario.Name = "lblCPFCadastroFuncionario";
@@ -233,7 +241,7 @@
             // lblNumeroCadastroFuncionario
             // 
             this.lblNumeroCadastroFuncionario.AutoSize = true;
-            this.lblNumeroCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblNumeroCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblNumeroCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroCadastroFuncionario.Location = new System.Drawing.Point(547, 196);
             this.lblNumeroCadastroFuncionario.Name = "lblNumeroCadastroFuncionario";
@@ -262,7 +270,7 @@
             // LblCidadeCadastroFuncionario
             // 
             this.LblCidadeCadastroFuncionario.AutoSize = true;
-            this.LblCidadeCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.LblCidadeCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblCidadeCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblCidadeCadastroFuncionario.Location = new System.Drawing.Point(438, 239);
             this.LblCidadeCadastroFuncionario.Name = "LblCidadeCadastroFuncionario";
@@ -289,7 +297,7 @@
             // LblBairroCadastroFuncionario
             // 
             this.LblBairroCadastroFuncionario.AutoSize = true;
-            this.LblBairroCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.LblBairroCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.LblBairroCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblBairroCadastroFuncionario.Location = new System.Drawing.Point(14, 239);
             this.LblBairroCadastroFuncionario.Name = "LblBairroCadastroFuncionario";
@@ -300,7 +308,7 @@
             // lblUfCadastroFuncionario
             // 
             this.lblUfCadastroFuncionario.AutoSize = true;
-            this.lblUfCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblUfCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblUfCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUfCadastroFuncionario.Location = new System.Drawing.Point(727, 242);
             this.lblUfCadastroFuncionario.Name = "lblUfCadastroFuncionario";
@@ -311,7 +319,7 @@
             // lblEnderecoCadastroFuncionario
             // 
             this.lblEnderecoCadastroFuncionario.AutoSize = true;
-            this.lblEnderecoCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblEnderecoCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblEnderecoCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnderecoCadastroFuncionario.Location = new System.Drawing.Point(156, 195);
             this.lblEnderecoCadastroFuncionario.Name = "lblEnderecoCadastroFuncionario";
@@ -322,7 +330,7 @@
             // lblCepCadastroFuncionario
             // 
             this.lblCepCadastroFuncionario.AutoSize = true;
-            this.lblCepCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblCepCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblCepCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCepCadastroFuncionario.Location = new System.Drawing.Point(17, 194);
             this.lblCepCadastroFuncionario.Name = "lblCepCadastroFuncionario";
@@ -341,7 +349,7 @@
             // lblTelefoneCadastroFuncionario
             // 
             this.lblTelefoneCadastroFuncionario.AutoSize = true;
-            this.lblTelefoneCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblTelefoneCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTelefoneCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefoneCadastroFuncionario.Location = new System.Drawing.Point(6, 115);
             this.lblTelefoneCadastroFuncionario.Name = "lblTelefoneCadastroFuncionario";
@@ -360,7 +368,7 @@
             // lblNomeCadastroFuncionario
             // 
             this.lblNomeCadastroFuncionario.AutoSize = true;
-            this.lblNomeCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblNomeCadastroFuncionario.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblNomeCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeCadastroFuncionario.Location = new System.Drawing.Point(6, 75);
             this.lblNomeCadastroFuncionario.Name = "lblNomeCadastroFuncionario";
@@ -370,6 +378,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtComplementoCadastroFuncionario);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtDataDmCadastroFuncionario);
@@ -393,7 +402,11 @@
             this.groupBox1.Controls.Add(this.txtMaskCepCadastroFuncionario);
             this.groupBox1.Controls.Add(this.txtCidadeCadastroFuncionario);
             this.groupBox1.Controls.Add(this.LblCidadeCadastroFuncionario);
+            this.groupBox1.Controls.Add(this.txtSenha);
+            this.groupBox1.Controls.Add(this.txtUsuario);
+            this.groupBox1.Controls.Add(this.lblSenha);
             this.groupBox1.Controls.Add(this.txtBairroCadastroFuncionario);
+            this.groupBox1.Controls.Add(this.lblUsuario);
             this.groupBox1.Controls.Add(this.txtEnderecoCadastroFuncionario);
             this.groupBox1.Controls.Add(this.LblBairroCadastroFuncionario);
             this.groupBox1.Controls.Add(this.lblUfCadastroFuncionario);
@@ -406,7 +419,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(27, 64);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(951, 374);
+            this.groupBox1.Size = new System.Drawing.Size(942, 374);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro Funcionário";
@@ -422,7 +435,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(641, 199);
             this.label1.Name = "label1";
@@ -432,7 +445,7 @@
             // 
             // txtDataDmCadastroFuncionario
             // 
-            this.txtDataDmCadastroFuncionario.Location = new System.Drawing.Point(455, 292);
+            this.txtDataDmCadastroFuncionario.Location = new System.Drawing.Point(423, 296);
             this.txtDataDmCadastroFuncionario.Multiline = true;
             this.txtDataDmCadastroFuncionario.Name = "txtDataDmCadastroFuncionario";
             this.txtDataDmCadastroFuncionario.Size = new System.Drawing.Size(127, 20);
@@ -440,7 +453,7 @@
             // 
             // txtDataAdmCadastroFuncionario
             // 
-            this.txtDataAdmCadastroFuncionario.Location = new System.Drawing.Point(160, 293);
+            this.txtDataAdmCadastroFuncionario.Location = new System.Drawing.Point(144, 297);
             this.txtDataAdmCadastroFuncionario.Multiline = true;
             this.txtDataAdmCadastroFuncionario.Name = "txtDataAdmCadastroFuncionario";
             this.txtDataAdmCadastroFuncionario.Size = new System.Drawing.Size(127, 20);
@@ -449,9 +462,9 @@
             // lblDataDmCadastroFuncionario
             // 
             this.lblDataDmCadastroFuncionario.AutoSize = true;
-            this.lblDataDmCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblDataDmCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDataDmCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataDmCadastroFuncionario.Location = new System.Drawing.Point(323, 295);
+            this.lblDataDmCadastroFuncionario.Location = new System.Drawing.Point(292, 300);
             this.lblDataDmCadastroFuncionario.Name = "lblDataDmCadastroFuncionario";
             this.lblDataDmCadastroFuncionario.Size = new System.Drawing.Size(125, 16);
             this.lblDataDmCadastroFuncionario.TabIndex = 31;
@@ -460,13 +473,51 @@
             // lblDataAdmCadastroFuncionario
             // 
             this.lblDataAdmCadastroFuncionario.AutoSize = true;
-            this.lblDataAdmCadastroFuncionario.BackColor = System.Drawing.SystemColors.Control;
+            this.lblDataAdmCadastroFuncionario.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblDataAdmCadastroFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataAdmCadastroFuncionario.Location = new System.Drawing.Point(24, 296);
+            this.lblDataAdmCadastroFuncionario.Location = new System.Drawing.Point(14, 297);
             this.lblDataAdmCadastroFuncionario.Name = "lblDataAdmCadastroFuncionario";
             this.lblDataAdmCadastroFuncionario.Size = new System.Drawing.Size(124, 16);
             this.lblDataAdmCadastroFuncionario.TabIndex = 30;
             this.lblDataAdmCadastroFuncionario.Text = "*Data Admissão:";
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(377, 333);
+            this.txtSenha.Multiline = true;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(205, 20);
+            this.txtSenha.TabIndex = 11;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(82, 334);
+            this.txtUsuario.Multiline = true;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(205, 20);
+            this.txtUsuario.TabIndex = 11;
+            // 
+            // lblSenha
+            // 
+            this.lblSenha.AutoSize = true;
+            this.lblSenha.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.Location = new System.Drawing.Point(301, 336);
+            this.lblSenha.Name = "lblSenha";
+            this.lblSenha.Size = new System.Drawing.Size(62, 16);
+            this.lblSenha.TabIndex = 9;
+            this.lblSenha.Text = "*Senha:";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(6, 337);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(72, 16);
+            this.lblUsuario.TabIndex = 9;
+            this.lblUsuario.Text = "*Usuario:";
             // 
             // txtCod
             // 
@@ -480,6 +531,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackgroundImage = global::Agenda_C_sharp.Properties.Resources.gods___myth_by_genzoman;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1004, 501);
             this.Controls.Add(this.btnSairCadastroFuncionario);
             this.Controls.Add(this.btnGravarCadastroFuncionario);
@@ -537,5 +591,9 @@
         public System.Windows.Forms.Label lblDataAdmCadastroFuncionario;
         public System.Windows.Forms.TextBox txtComplementoCadastroFuncionario;
         public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txtSenha;
+        public System.Windows.Forms.TextBox txtUsuario;
+        public System.Windows.Forms.Label lblSenha;
+        public System.Windows.Forms.Label lblUsuario;
     }
 }

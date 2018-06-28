@@ -14,16 +14,18 @@ namespace Agenda_C_sharp
         string comando = "";
 
         cldBancoDados objBancoDados = new cldBancoDados();
-
-       
-
-
-
-
-
-
-
-
+        
+        public static string Cifrar(string valor)
+        {
+            var buffer = System.Text.Encoding.UTF8.GetBytes(valor);
+            return Convert.ToBase64String(buffer);
+        }
+        public static string Decifrar(string valor)
+        {
+            var buffer = Convert.FromBase64String(valor);
+            return System.Text.Encoding.UTF8.GetString(buffer);
+        }
+        
         public DataTable PreencherUF()
         {
             //comando = "select UF from T_UF";

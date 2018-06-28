@@ -41,8 +41,8 @@ namespace Agenda_C_sharp
                     txtMaskCepCadastroCliente.Text = ObjDrDados["cep"].ToString();
                     txtEnderecoCadastroCliente.Text = ObjDrDados["endereco"].ToString();
                     cboUFCadastroCliente.SelectedValue = ObjDrDados["UF"].ToString();
-                    txtNumeroCadastroCliente.Text = ObjDrDados["dNumero"].ToString();
-                    txtComplementoCadastroCliente.Text = ObjDrDados["dComplemento"].ToString();
+                    txtNumeroCadastroCliente.Text = ObjDrDados["Numero"].ToString();
+                    txtComplementoCadastroCliente.Text = ObjDrDados["Complemento"].ToString();
                     txtBairroCadastroCliente.Text = ObjDrDados["bairro"].ToString();
                     txtCidadeCadastroCliente.Text = ObjDrDados["cidade"].ToString();
                 }

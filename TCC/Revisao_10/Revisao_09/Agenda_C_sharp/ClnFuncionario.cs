@@ -11,7 +11,7 @@ namespace Agenda_C_sharp
     class ClnFuncionario
     {
         private int _cd_Funcionario;
-        private string _Nome, _Cpf, _Rg, _Genero, _Endereco, _Numero, _Complemento, _Bairro, _Cidade, _Cep, _Estado, _UF, _Email, _telefone, _Celular, _codigo;
+        private string _Nome, _Cpf, _Rg, _Genero, _Endereco, _Numero, _Complemento, _Bairro, _Cidade, _Cep, _Estado, _UF, _Email, _telefone, _Celular, _codigo, _usuario, _senha;
         private string comando;
 
         public string Nome { get => _Nome; set => _Nome = value; }
@@ -30,21 +30,34 @@ namespace Agenda_C_sharp
         public string Telefone { get => _telefone; set => _telefone = value; }
         public string Celular { get => _Celular; set => _Celular = value; }
         public string Codigo { get => _codigo; set => _codigo = value; }
+        public string Usuario { get => _usuario; set => _usuario = value; }
+        public string Senha { get => _senha; set => _senha = value; }
 
         internal SqlDataReader localizarCodigo(string codigo)
         {
             cldBancoDados objBancoDados = new cldBancoDados();
             comando = " select * from Tb_Funcionario ";
             comando += " where cd_Funcionario = " + codigo;
-
-
+            
             return objBancoDados.RetornaLinha(comando);
         }
+        public bool ValidarUsuario(string usuario, string senha)
+        {
+            cldBancoDados objBancoDados = new cldBancoDados();
+            comando = " select * from Tb_Funcionario ";
+            comando += " where Usuario = '" + usuario + "' and senha = '" + 
+                ClnUtil.Cifrar(senha)
+                + "'";
+            SqlDataReader dataReader = objBancoDados.RetornaLinha(comando);
+
+            return dataReader.Read();
+        }
+
         public DataTable LocalizarPorCampo(string strValorCampo, string strNomeCampo)
         {
             cldBancoDados objBancoDados = new cldBancoDados();
 
-            comando = "select cd_Funcionario, Nome,Cpf, Rg,Genero, Endereco, Numero, Complemento, Bairro, Cidade, Cep, Estado, UF, Email, telefone, Celular from Tb_Funcionario  where " + strNomeCampo + " like '%" +
+            comando = "select cd_Funcionario, Nome, Cpf, Rg,Genero, Endereco, Numero, Complemento, Bairro, Cidade, Cep, Estado, UF, Email, telefone, Celular, usuario from Tb_Funcionario  where " + strNomeCampo + " like '%" +
             strValorCampo + "%' and Ativo= 1 order by cd_Funcionario";
 
             return objBancoDados.RetornaTabela(comando);
@@ -77,23 +90,25 @@ namespace Agenda_C_sharp
         {
             cldBancoDados objBancoDados = new cldBancoDados();
             comando = "  " +
-                "update tb_Funcionario set" +
-                "Nome = '" + Nome + "'," +
-                "Cpf = '" + Cpf + "'," +
-                "Rg = '" + Rg + "'," +
-                "Genero = '" + Genero + "'," +
-                "Telefone = '" + Telefone + "'," +
-                "Celular ='" + Celular + "'," +
-                "Email= '" + Email + "'," +
-                "Cep= '" + Cep + "'," +
-                "Endereco= '" + Endereco + "'," +
-                "Complemento= '" + Complemento + "'," +
-                "Bairro= '" + Bairro + "'," +
-                "Numero='" + Numero + "'," +
-                "Cidade='" + Cidade + "'," +
-                "UF='" + UF + "'," +
-                "where  cd_Funcionario= '" + Codigo + "'";
+                " update tb_Funcionario set" +
+                " Nome = '" + Nome + "'," +
+                " Cpf = '" + Cpf + "'," +
+                " Rg = '" + Rg + "'," +
+                " Genero = '" + Genero + "'," +
+                " Telefone = '" + Telefone + "'," +
+                " Celular ='" + Celular + "'," +
+                " Email= '" + Email + "'," +
+                " Cep= '" + Cep + "'," +
+                " Endereco= '" + Endereco + "'," +
+                " Complemento= '" + Complemento + "'," +
+                " Bairro= '" + Bairro + "'," +
+                " Numero='" + Numero + "'," +
+                " Cidade='" + Cidade + "'," +
+                " UF='" + UF + "'," +
+                " USUARIO='" + Usuario + "'," +
+                " Senha='" + ClnUtil.Cifrar(Senha) + "'" +
 
+                " where  cd_Funcionario= '" + Codigo + "'";
 
             objBancoDados.ExecutaComando(comando);
         }
@@ -103,12 +118,12 @@ namespace Agenda_C_sharp
             cldBancoDados objBancoDados = new cldBancoDados();
             comando = " Insert into tb_Funcionario ( " +
                 "Nome, cpf, rg, Telefone, Celular, Email, " +
-                "Cep, Endereco, Numero, Complemento, Bairro, Cidade, UF" +
+                "Cep, Endereco, Numero, Complemento, Bairro, Cidade, UF, Usuario, Senha" +
                 ") values ( " +
                 "'" + Nome + "'," +
                 "'" + Cpf + "'," +
                 "'" + Rg + "'," +
-                 "'" + Genero + "'," +
+                "'" + Genero + "'," +
                 "'" + Telefone + "'," +
                 "'" + Celular + "'," +
                 "'" + Email + "'," +
@@ -118,7 +133,9 @@ namespace Agenda_C_sharp
                 "'" + Complemento + "'," +
                 "'" + Bairro + "'," +
                 "'" + Cidade + "'," +
-                "'" + UF + "')";
+                "'" + UF + "'," +
+                "'" + Usuario + "'," +
+                "'" + ClnUtil.Cifrar(Senha) + "')";
 
             objBancoDados.ExecutaComando(comando);
         }

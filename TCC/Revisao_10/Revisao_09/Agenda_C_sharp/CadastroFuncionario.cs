@@ -43,19 +43,22 @@ namespace Agenda_C_sharp
                 ObjDrDados = ObjCliente.localizarCodigo(txtCod.Text);
                 if (ObjDrDados.Read())
                 {
-                    txtNomeCadastroFuncionario.Text = ObjDrDados["RazaoSocial"].ToString();
-                    txtCPFCadastroFuncionario.Text = ObjDrDados["CNPJ"].ToString();
-                    txtRGCadastroFuncionario.Text = ObjDrDados["NomeFantasia"].ToString();
+                    txtNomeCadastroFuncionario.Text = ObjDrDados["Nome"].ToString();
+                    txtCPFCadastroFuncionario.Text = ObjDrDados["Cpf"].ToString();
+                    txtRGCadastroFuncionario.Text = ObjDrDados["Rg"].ToString();
                     txtTelefoneCadastroFuncionario.Text = ObjDrDados["Telefone"].ToString();
                     txtCelularCadastroFuncionario.Text = ObjDrDados["Celular"].ToString();
                     txtEmailCadastroFuncionario.Text = ObjDrDados["email"].ToString();
                     txtMaskCepCadastroFuncionario.Text = ObjDrDados["cep"].ToString();
                     txtEnderecoCadastroFuncionario.Text = ObjDrDados["endereco"].ToString();
                     cboUFCadastroFuncionario.SelectedValue = ObjDrDados["UF"].ToString();
-                    txtNumeroCadastroFuncionario.Text = ObjDrDados["EndNumero"].ToString();
-                    txtComplementoCadastroFuncionario.Text = ObjDrDados["EndComplemento"].ToString();
+                    txtNumeroCadastroFuncionario.Text = ObjDrDados["Numero"].ToString();
+                    txtComplementoCadastroFuncionario.Text = ObjDrDados["Complemento"].ToString();
                     txtBairroCadastroFuncionario.Text = ObjDrDados["bairro"].ToString();
                     txtCidadeCadastroFuncionario.Text = ObjDrDados["cidade"].ToString();
+
+                    txtUsuario.Text = ObjDrDados["Usuario"].ToString();
+                    txtSenha.Text = ClnUtil.Decifrar(ObjDrDados["senha"].ToString());
                 }
 
             }
@@ -68,8 +71,6 @@ namespace Agenda_C_sharp
             cboUFCadastroFuncionario.ValueMember = "UF"; // valor que pode ou não ser guardado
             cboUFCadastroFuncionario.DisplayMember = "UF"; // valor apresentado
             cboUFCadastroFuncionario.SelectedIndex = 23;// Deixar sem valor a combo use -1 ou o 23 é SP
-
-
         }
 
         private void btnGravarCadastroFuncionario_Click(object sender, EventArgs e)
@@ -79,6 +80,7 @@ namespace Agenda_C_sharp
                 (txtTelefoneCadastroFuncionario.Text == "") || (txtEnderecoCadastroFuncionario.Text == "") ||
                (txtCidadeCadastroFuncionario.Text == "") || (txtBairroCadastroFuncionario.Text == "") ||
                (txtMaskCepCadastroFuncionario.Text == "") || (cboUFCadastroFuncionario.Text == "") ||
+                (txtUsuario.Text == "") || (txtSenha.Text == "") ||
                 (txtCelularCadastroFuncionario.Text == "") || (txtEmailCadastroFuncionario.Text == ""))
             {
                 MessageBox.Show("Os campos com * são Obrigatórios", "item Novo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -86,48 +88,44 @@ namespace Agenda_C_sharp
             }
             else
             {
+                ClnFuncionario ObjFuncionario = new ClnFuncionario();
+                ObjFuncionario.Bairro = txtBairroCadastroFuncionario.Text;
+                ObjFuncionario.Celular = txtCelularCadastroFuncionario.Text;
+                ObjFuncionario.Cep = txtMaskCepCadastroFuncionario.Text;
+                ObjFuncionario.Cidade = txtCidadeCadastroFuncionario.Text;
+                ObjFuncionario.Cpf = txtCPFCadastroFuncionario.Text;
+                ObjFuncionario.Email = txtEmailCadastroFuncionario.Text;
+                ObjFuncionario.Complemento = txtComplementoCadastroFuncionario.Text;
+                ObjFuncionario.Endereco = txtEnderecoCadastroFuncionario.Text;
+                ObjFuncionario.Numero = txtNumeroCadastroFuncionario.Text;
+                ObjFuncionario.Nome = txtNomeCadastroFuncionario.Text;
+                ObjFuncionario.Rg = txtRGCadastroFuncionario.Text;
+              //  ObjFuncionario.Genero = lblGeneroCadastroFuncionario.Text;
+                ObjFuncionario.Telefone = txtTelefoneCadastroFuncionario.Text;
+                ObjFuncionario.UF = cboUFCadastroFuncionario.SelectedValue.ToString();
+                ObjFuncionario.Usuario = txtUsuario.Text;
+                ObjFuncionario.Senha = txtSenha.Text;
 
+               
 
-                ClnCliente ObjCliente = new ClnCliente();
-                ObjCliente.Bairro = txtBairroCadastroFuncionario.Text;
-                ObjCliente.Celular = txtCelularCadastroFuncionario.Text;
-                ObjCliente.Cep = txtMaskCepCadastroFuncionario.Text;
-                ObjCliente.Cidade = txtCidadeCadastroFuncionario.Text;
-                ObjCliente.Cpf = txtCPFCadastroFuncionario.Text;
-                ObjCliente.Email = txtEmailCadastroFuncionario.Text;
-                ObjCliente.Complemento = txtComplementoCadastroFuncionario.Text;
-                ObjCliente.Endereco = txtEnderecoCadastroFuncionario.Text;
-                ObjCliente.Numero = txtNumeroCadastroFuncionario.Text;
-                ObjCliente.Nome = txtNomeCadastroFuncionario.Text;
-                ObjCliente.Rg = txtRGCadastroFuncionario.Text;
-                ObjCliente.Genero = lblGeneroCadastroFuncionario.Text;
-                ObjCliente.Telefone = txtTelefoneCadastroFuncionario.Text;
-                ObjCliente.UF = cboUFCadastroFuncionario.SelectedValue.ToString();
+                if (rbMasculinoCadastroFuncionario.Checked == true)
+                {
+                    ObjFuncionario.Genero = "M";
+                }
+                else if (rbCadastroFuncionario.Checked == true)
+                {
+                    ObjFuncionario.Genero = "F";
+                }
 
-                /// if (string.IsNullOrEmpty(txtCod.Text))// ira devolver se for nulo ou vazio
-                /// {
-                //eu adicionei ver com o Amor
-                //Item novo
-                ///ObjCliente.Inserir();
+                ObjFuncionario.Gravar();
 
-            }
-            /// else
-            {
-                //    //alterar item
-                ///ObjCliente.cd_Cliente = Convert.ToInt32(txtCod.Text);
-                // ObjCliente.Atualizar();
-
-                //}
-                /// ObjCliente.Gravar();
-
-                if (txtCod.Text == "")
+                if (string.IsNullOrEmpty(txtCod.Text))
                 {
                     MessageBox.Show("Registro Inserido com sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     MessageBox.Show("Registro Alteredo com sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
         }

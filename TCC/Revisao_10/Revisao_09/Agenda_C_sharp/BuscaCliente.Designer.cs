@@ -55,6 +55,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.btnNovoBuscaCliente);
             this.groupBox2.Controls.Add(this.btnAlterarBuscaCliente);
             this.groupBox2.Controls.Add(this.btnExcluirBuscaCliente);
@@ -115,6 +116,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.groupBox1.Controls.Add(this.cboTipoPesquisa);
             this.groupBox1.Controls.Add(this.txtBuscaCliente);
             this.groupBox1.Controls.Add(this.btnPesquisarBuscaCliente);
@@ -164,7 +167,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 439);
+            this.BackgroundImage = global::Agenda_C_sharp.Properties.Resources.gods___myth_by_genzoman;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1004, 501);
             this.Controls.Add(this.dgvBuscaCliente);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnSairBuscaCliente);

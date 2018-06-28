@@ -14,6 +14,9 @@ namespace Agenda_C_sharp
         [STAThread]
         static void Main()
         {
+            var cifrado = ClnUtil.Cifrar("jogos");
+            var decifrado = ClnUtil.Decifrar(cifrado);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());

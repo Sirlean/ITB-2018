@@ -21,5 +21,10 @@ namespace Agenda_C_sharp
         {
 
         }
+
+        private void btnPrintNF_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

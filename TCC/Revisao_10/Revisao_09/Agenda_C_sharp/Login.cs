@@ -19,8 +19,29 @@ namespace Agenda_C_sharp
 
         private void btnEnterLongin_Click(object sender, EventArgs e)
         {
-            Menu objMenu = new Menu();
-            objMenu.ShowDialog();
+            bool logado = false;
+
+            if (txtNomeLongin.Text.ToUpper() == "ADMIN")
+            {
+                if (txtSenhaLogin.Text == "12345")
+                {
+                    logado = true;
+                }
+            }
+            else
+            {
+                ClnFuncionario clnFuncionario = new ClnFuncionario();
+                logado = clnFuncionario.ValidarUsuario(txtNomeLongin.Text, txtSenhaLogin.Text);
+            }
+            if (logado == true)
+            {
+                Menu objMenu = new Menu();
+                objMenu.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha inválido!");
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

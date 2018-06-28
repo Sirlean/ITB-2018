@@ -69,6 +69,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.cboFornecedorCadastroProduto);
             this.groupBox1.Controls.Add(this.cboPlataformaCadastroProduto);
             this.groupBox1.Controls.Add(this.cboFabricanteCadastroProduto);
@@ -151,6 +152,7 @@
             // lblPlataformaCadastroProduto
             // 
             this.lblPlataformaCadastroProduto.AutoSize = true;
+            this.lblPlataformaCadastroProduto.BackColor = System.Drawing.Color.White;
             this.lblPlataformaCadastroProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlataformaCadastroProduto.Location = new System.Drawing.Point(95, 163);
             this.lblPlataformaCadastroProduto.Name = "lblPlataformaCadastroProduto";
@@ -161,6 +163,7 @@
             // lblFornecedorCadastroProduto
             // 
             this.lblFornecedorCadastroProduto.AutoSize = true;
+            this.lblFornecedorCadastroProduto.BackColor = System.Drawing.Color.White;
             this.lblFornecedorCadastroProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFornecedorCadastroProduto.Location = new System.Drawing.Point(316, 162);
             this.lblFornecedorCadastroProduto.Name = "lblFornecedorCadastroProduto";
@@ -186,6 +189,7 @@
             // lblCondicaoCadastroProduto
             // 
             this.lblCondicaoCadastroProduto.AutoSize = true;
+            this.lblCondicaoCadastroProduto.BackColor = System.Drawing.Color.White;
             this.lblCondicaoCadastroProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCondicaoCadastroProduto.Location = new System.Drawing.Point(357, 113);
             this.lblCondicaoCadastroProduto.Name = "lblCondicaoCadastroProduto";
@@ -195,7 +199,7 @@
             // 
             // txtQuantidadeCadastroProduto
             // 
-            this.txtQuantidadeCadastroProduto.Location = new System.Drawing.Point(539, 67);
+            this.txtQuantidadeCadastroProduto.Location = new System.Drawing.Point(547, 66);
             this.txtQuantidadeCadastroProduto.Name = "txtQuantidadeCadastroProduto";
             this.txtQuantidadeCadastroProduto.Size = new System.Drawing.Size(99, 22);
             this.txtQuantidadeCadastroProduto.TabIndex = 13;
@@ -210,6 +214,7 @@
             // lblTipoCadastroProduto
             // 
             this.lblTipoCadastroProduto.AutoSize = true;
+            this.lblTipoCadastroProduto.BackColor = System.Drawing.Color.White;
             this.lblTipoCadastroProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTipoCadastroProduto.Location = new System.Drawing.Point(6, 32);
             this.lblTipoCadastroProduto.Name = "lblTipoCadastroProduto";
@@ -220,6 +225,7 @@
             // lblQuantidadeCadastroProduto
             // 
             this.lblQuantidadeCadastroProduto.AutoSize = true;
+            this.lblQuantidadeCadastroProduto.BackColor = System.Drawing.Color.White;
             this.lblQuantidadeCadastroProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantidadeCadastroProduto.Location = new System.Drawing.Point(455, 69);
             this.lblQuantidadeCadastroProduto.Name = "lblQuantidadeCadastroProduto";
@@ -230,6 +236,7 @@
             // lblNomeCadastroProduto
             // 
             this.lblNomeCadastroProduto.AutoSize = true;
+            this.lblNomeCadastroProduto.BackColor = System.Drawing.Color.White;
             this.lblNomeCadastroProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeCadastroProduto.Location = new System.Drawing.Point(146, 33);
             this.lblNomeCadastroProduto.Name = "lblNomeCadastroProduto";
@@ -240,6 +247,7 @@
             // lblFabricanteCadastroProduto
             // 
             this.lblFabricanteCadastroProduto.AutoSize = true;
+            this.lblFabricanteCadastroProduto.BackColor = System.Drawing.Color.White;
             this.lblFabricanteCadastroProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFabricanteCadastroProduto.Location = new System.Drawing.Point(150, 110);
             this.lblFabricanteCadastroProduto.Name = "lblFabricanteCadastroProduto";
@@ -250,6 +258,7 @@
             // lblGeneroCadastroProduto
             // 
             this.lblGeneroCadastroProduto.AutoSize = true;
+            this.lblGeneroCadastroProduto.BackColor = System.Drawing.Color.White;
             this.lblGeneroCadastroProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGeneroCadastroProduto.Location = new System.Drawing.Point(-1, 71);
             this.lblGeneroCadastroProduto.Name = "lblGeneroCadastroProduto";
@@ -260,6 +269,7 @@
             // lblPrecoCadastroProduto
             // 
             this.lblPrecoCadastroProduto.AutoSize = true;
+            this.lblPrecoCadastroProduto.BackColor = System.Drawing.Color.White;
             this.lblPrecoCadastroProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecoCadastroProduto.Location = new System.Drawing.Point(6, 107);
             this.lblPrecoCadastroProduto.Name = "lblPrecoCadastroProduto";
@@ -270,6 +280,7 @@
             // lblFaixaEtariaCadastroProduto
             // 
             this.lblFaixaEtariaCadastroProduto.AutoSize = true;
+            this.lblFaixaEtariaCadastroProduto.BackColor = System.Drawing.Color.White;
             this.lblFaixaEtariaCadastroProduto.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFaixaEtariaCadastroProduto.Location = new System.Drawing.Point(212, 71);
             this.lblFaixaEtariaCadastroProduto.Name = "lblFaixaEtariaCadastroProduto";
@@ -299,13 +310,13 @@
             // 
             // txtCod
             // 
+            this.txtCod.Enabled = false;
             this.txtCod.Location = new System.Drawing.Point(92, 22);
             this.txtCod.Multiline = true;
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(83, 20);
             this.txtCod.TabIndex = 16;
             this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
-            this.txtCod.Enabled = false;
             // 
             // LblCod
             // 
@@ -322,7 +333,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 397);
+            this.BackgroundImage = global::Agenda_C_sharp.Properties.Resources.gods___myth_by_genzoman;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1004, 501);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.LblCod);
             this.Controls.Add(this.btnSairCadastroProduto);
